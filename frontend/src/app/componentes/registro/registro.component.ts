@@ -1,10 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Validators, FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { RegistroService } from '../../servicios/registro.service';
+import { Usuario } from '../../clases/usuario';
+import { ReactiveFormsModule } from '@angular/forms';
+
+
+
 
 function copiaClave(input: FormControl) {
 
       if (input.root.get('clave') == null) {
+        
         return null;
       }
 
@@ -17,36 +24,69 @@ function copiaClave(input: FormControl) {
   templateUrl: './registro.component.html',
   styleUrls: ['./registro.component.css']
 })
+
 export class RegistroComponent implements OnInit {
 
-  constructor(private builder: FormBuilder) { }
+  email:FormControl;
+  clave:FormControl;
+  copiaClave: FormControl;
+  registroForm: FormGroup;
 
-  email = new FormControl('', [
-    Validators.required,
-    Validators.minLength(5)
-  ]);
-  
-  clave = new FormControl('', [
-    Validators.required
-  ]);
-  
-  copiaClave = new FormControl('', [
-    Validators.required,
-    copiaClave
-  ]);
+  constructor(private builder: FormBuilder,
+              private _registro: RegistroService
+    ) {
+      
+    
 
-  registroForm: FormGroup = this.builder.group({
-    email: this.email,
-    clave: this.clave,
-    copiaClave: this.copiaClave,
-  });
+
+     }
+
 
   ngOnInit() {
+    this.email = new FormControl('', [
+      Validators.required,
+      Validators.minLength(5),
+      Validators.email
+    ]);
+    
+    this.clave = new FormControl('', [
+      Validators.required,
+     Validators.minLength(4)
+    ]);
+    
+    this.copiaClave = new FormControl('', [
+      Validators.required,
+      copiaClave
+    ]);
+  
+   
+  
+    this.registroForm = this.builder.group({
+      email: this.email,
+      clave: this.clave,
+      copiaClave: this.copiaClave,
+      
+    });
+    
+
   }
 
-  Registrar(){
+  onSubmit(){
+    
+    var usuario = new Usuario(this.registroForm.get('email').value, this.registroForm.get('clave').value);
+    
+
+    this._registro.Registro(usuario)
+    //.subscribe(data =>{})
+    ;
+
     alert("Usuario Registrado");
     console.log(this.registroForm.get('email').value); 
   }
+
+  
+  
+ 
+  
 
 }

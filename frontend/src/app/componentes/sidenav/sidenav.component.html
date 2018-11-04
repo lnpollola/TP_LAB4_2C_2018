@@ -1,0 +1,120 @@
+
+<mat-drawer-container class="sidenav-container">
+  <mat-drawer mode="side" opened>
+
+    <mat-toolbar class="sidenav-toolbar">
+        <mat-toolbar-row>
+          <span>Bienvenido {{usuario}}</span>
+          <mat-icon class="usuario-icon">face</mat-icon>
+        </mat-toolbar-row>      
+      
+        <mat-toolbar-row>
+          <!-- <span>Third Line</span>
+          <span class="usuario-spacer"></span> -->
+          <mat-icon class="usuario-icon">favorite</mat-icon>
+          <mat-icon class="usuario-icon">delete</mat-icon>
+          <mat-icon class="usuario-icon">cancel</mat-icon>  
+        </mat-toolbar-row>
+      </mat-toolbar>
+
+
+
+
+
+      
+      <!-- ADMINISTRADOR -->
+      <mat-list  *ngIf="usuario == 'admin'"   >
+        
+        <h3 mat-subheader class="h3-subheader" >La Comanda</h3>
+        
+          <mat-list-item *ngFor="let folder of folders" class="mat-list">
+                      
+              <mat-icon mat-list-icon>assignment</mat-icon>
+              <button mat-raised-button class="mat-list-button">
+                
+                <h4 mat-line>{{folder.name}}</h4>
+                <!-- <p mat-line> {{folder.updated | date}} </p> -->
+              </button>             
+            
+          
+          </mat-list-item>
+        
+        <mat-divider></mat-divider>
+        
+        <h3 mat-subheader class="h3-subheader">Reportes</h3>
+          
+          <mat-list-item *ngFor="let note of notes" class="mat-list">
+            <mat-icon mat-list-icon>note</mat-icon>
+            <h4 mat-line>{{note.name}}</h4>
+            <p mat-line> {{note.updated | date}} </p>
+          </mat-list-item>
+      </mat-list>
+
+      <!-- MESERO -->
+      <mat-list *ngIf="usuario == 'mozo'">
+        <h3 mat-subheader>Pedidos Pendientes</h3>
+        <mat-list-item *ngFor="let folder of folders">
+          <mat-icon mat-list-icon>assignment</mat-icon>
+          <h4 mat-line>{{folder.name}}</h4>
+          <!-- <p mat-line> {{folder.updated | date}} </p> -->
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <h3 mat-subheader>Reportes</h3>
+        <mat-list-item *ngFor="let note of notes">
+          <mat-icon mat-list-icon>note</mat-icon>
+          <h4 mat-line>{{note.name}}</h4>
+          <!-- <p mat-line> {{note.updated | date}} </p> -->
+        </mat-list-item>
+      </mat-list>
+
+
+
+       <!-- BARMAN -->
+       <mat-list *ngIf="usuario == 'barman'">
+          <h3 mat-subheader>Pedidos Pendientes</h3>
+          <mat-list-item *ngFor="let folder of folders">
+            <mat-icon mat-list-icon>assignment</mat-icon>
+            <h4 mat-line>{{folder.name}}</h4>
+            <p mat-line> {{folder.updated | date}} </p>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <h3 mat-subheader>Reportes</h3>
+          <mat-list-item *ngFor="let note of notes">
+            <mat-icon mat-list-icon>note</mat-icon>
+            <h4 mat-line>{{note.name}}</h4>
+            <p mat-line> {{note.updated | date}} </p>
+          </mat-list-item>
+        </mat-list>
+
+
+
+
+
+
+
+  </mat-drawer>
+  <mat-drawer-content class="sidenav-content">
+    
+    <!-- <mat-toolbar class="sidenav-content-toolbar">
+      <mat-toolbar-row>
+        <span >The Tabern</span>
+        <mat-icon class="usuario-icon">restaurant</mat-icon>
+      </mat-toolbar-row>         
+    </mat-toolbar> -->
+
+    <div [ngSwitch]="usuario">
+      <div *ngSwitchCase="'admin'">
+          ADMIN
+      </div>
+      <div *ngSwitchCase="'mozo'">
+          <app-mozo></app-mozo>
+      </div>
+      
+
+
+
+        ACA VA LA TABLA!
+    </div>
+  
+  </mat-drawer-content>
+</mat-drawer-container>

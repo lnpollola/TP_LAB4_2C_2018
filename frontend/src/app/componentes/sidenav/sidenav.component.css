@@ -1,0 +1,84 @@
+/* @import '~@angular/material/prebuilt-themes/deeppurple-amber.css'; */
+@import url('https://fonts.googleapis.com/css?family=Oswald'); 
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons'); 
+
+
+
+.sidenav-container{
+  
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* background: rgb(187, 113, 113); */
+  /* font-family: Roboto, Arial, sans-serif; */
+  font-family: 'Oswald', sans-serif;
+  background-image: url(../../../assets/imagenes/loginfondo.jpg);
+}
+
+.sidenav-toolbar{
+  color: #fff;
+  background: rgb(19, 18, 18);
+  font-family: 'Oswald', sans-serif;
+  
+}
+
+/* .sidenav-list{
+
+  font-family: 'Oswald', sans-serif;
+
+} */
+
+.mat-list{
+  font-family: 'Oswald', sans-serif;
+  cursor: pointer;
+
+}
+
+.h3-subheader{ 
+  font-family: 'Oswald', sans-serif;
+}
+
+.sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Oswald', sans-serif;
+}
+
+/* .sidenav-content-toolbar {
+  position: fixed;
+  top:-10;
+  left: auto;
+  display: flex;
+  height: 100%; 
+  align-items: left;
+  float: right;
+  justify-content: center; 
+  font-family: 'Oswald', sans-serif;
+} */
+
+
+
+.mat-list-icon {
+  color: rgba(27, 26, 26, 0.54);
+  
+}
+
+.usuario-icon {
+  padding: 0 14px;
+  cursor: pointer;
+}
+
+.usuario-spacer {
+  flex: 1 1 auto;
+}
+
+.mat-list-button button,
+.mat-list-button a {
+  margin-right: 8px;
+  display: flex;
+
+}
