@@ -17,7 +17,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 export class GenericoService {
 
 
-  api="http://localhost/Programacion-3-2017/TP_ESTACIONAMIENTO_DV/";
+  api="http://localhost/backend/";
   
   
   constructor() { }
