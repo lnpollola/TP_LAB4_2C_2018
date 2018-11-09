@@ -27,3 +27,21 @@ bienvenido pantallas por usuarios
 Estilos y experiencia de usuario
 Sistema funcionando
 Captcha propio y favicon
+
+https://github.com/sarwin-github/restaurant-app-angular-6
+
+https://github.com/luisconcha/restaurant_ag6/tree/master/src/app/components
+
+https://github.com/AnilSharma1997/Pizza-Restaurant-WebPage-in-Angular6
+
+funcionalidad basica
+
+datos hardcode
+alta con foto 
+alta usuario y 1 tipo de plato
+listado del plato 
+pipe
+directiva
+
+final
+
