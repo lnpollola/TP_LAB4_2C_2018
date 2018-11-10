@@ -26,6 +26,6 @@ const options = {
     key: fs.readFileSync('./backend/keys/key.pem'),
 };
 
-https.createServer(options, server).listen(3001, () => {
+https.createServer(options, server).listen(process.env.PORT || 3001, () => {
     console.log(`The api server running on the port: ${colors.red(port)}  - Server status: ${colors.yellow('OnLine')} `);
 });
