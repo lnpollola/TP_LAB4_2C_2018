@@ -6,7 +6,7 @@ import {handleAuthentication} from './security/auth';
 import {handleAuthorization} from './security/authz';
 
 const colors = require('colors');
-const port = 3001;
+const port = process.env.PORT  || 3001;
 const server: Express = jsonServer.create();
 const router = jsonServer.router('db.json');
 const middlewares = jsonServer.defaults();

@@ -26,6 +26,7 @@
     "web-animations-js": "2.2.5",
     "zone.js": "^0.8.26"
   },
+  
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.6.8",
     "@angular/cli": "6.0.8",
@@ -52,5 +53,8 @@
     "jsonwebtoken": "7.4.1",
     "colors": "^1.2.1",
     "typescript": "2.7.2"
-  }
+  },
+  "scripts": {
+    "start" : "node server.js"
+ }
 }
