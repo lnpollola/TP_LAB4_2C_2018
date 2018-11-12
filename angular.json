@@ -3,41 +3,38 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "restaurant": {
+    "intro2angular": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist",
+            "outputPath": "dist/intro2angular",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "tsConfig": "src/tsconfig.app.json",
             "polyfills": "src/polyfills.ts",
+            "tsConfig": "src/tsconfig.app.json",
             "assets": [
-              "src/assets",
-              "src/favicon.ico"
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
-              {
-                "input": "src/assets/css/touchTouch.css"
-              },
-              {
-                "input": "src/assets/css/form.css"
-              },
-              {
-                "input": "src/assets/css/style.css"
-              },
-              {
-                "input": "src/styles.css"
-              }
+              "src/styles.css"
             ],
             "scripts": []
           },
           "configurations": {
             "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -46,58 +43,41 @@
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true,
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ]
+              "buildOptimizer": true
             }
           }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "restaurant:build"
+            "browserTarget": "intro2angular:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "restaurant:build:production"
+              "browserTarget": "intro2angular:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "restaurant:build"
+            "browserTarget": "intro2angular:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "main": "src/test.ts",
-            "karmaConfig": "./karma.conf.js",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.spec.json",
-            "scripts": [],
+            "karmaConfig": "src/karma.conf.js",
             "styles": [
-              {
-                "input": "src/assets/css/touchTouch.css"
-              },
-              {
-                "input": "src/assets/css/form.css"
-              },
-              {
-                "input": "src/assets/css/style.css"
-              },
-              {
-                "input": "src/styles.css"
-              }
+              "src/styles.css"
             ],
+            "scripts": [],
             "assets": [
-              "src/assets",
-              "src/favicon.ico"
+              "src/favicon.ico",
+              "src/assets"
             ]
           }
         },
@@ -115,24 +95,21 @@
         }
       }
     },
-    "restaurant-e2e": {
-      "root": "",
-      "sourceRoot": "e2e",
+    "intro2angular-e2e": {
+      "root": "e2e/",
       "projectType": "application",
       "architect": {
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "./protractor.conf.js",
-            "devServerTarget": "restaurant:serve"
+            "protractorConfig": "e2e/protractor.conf.js",
+            "devServerTarget": "intro2angular:serve"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "e2e/tsconfig.e2e.json"
-            ],
+            "tsConfig": "e2e/tsconfig.e2e.json",
             "exclude": [
               "**/node_modules/**"
             ]
@@ -141,14 +118,5 @@
       }
     }
   },
-  "defaultProject": "restaurant",
-  "schematics": {
-    "@schematics/angular:component": {
-      "prefix": "lacc",
-      "styleext": "css"
-    },
-    "@schematics/angular:directive": {
-      "prefix": "lacc"
-    }
-  }
+  "defaultProject": "intro2angular"
 }

@@ -1,70 +1,123 @@
-import {BrowserModule} from '@angular/platform-browser';
-import {HttpClientModule} from '@angular/common/http';
-import {HashLocationStrategy, LocationStrategy, registerLocaleData} from '@angular/common';
-import {ErrorHandler, LOCALE_ID, NgModule} from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import {AppComponent } from './app.component';
+
+import {FlexLayoutModule } from '@angular/flex-layout';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import locatePt from '@angular/common/locales/pt';
 
-registerLocaleData(locatePt, 'pt');
+import { MenuComponent } from './menu/menu.component';
+import { DishdetailComponent } from './dishdetail/dishdetail.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component'; 
+
+import { DishService } from './services/dish.service';
+import { PromotionService } from './services/promotion.service';
+import { LeaderService } from './services/leader.service';
+
+import { AppRoutingModule} from './app-routing/app-routing.module';
+import { LoginComponent } from './login/login.component';
+
+import { FormsModule } from '@angular/forms'; 
+import { ReactiveFormsModule } from '@angular/forms';
+
+import {
+  MatFormFieldModule,
+  MatAutocompleteModule,
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatExpansionModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatRadioModule,
+  MatRippleModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSliderModule,
+  MatSlideToggleModule,
+  MatSnackBarModule,
+  MatStepperModule,
+  MatTableModule,
+  MatTabsModule,
+  MatToolbarModule,
+  MatTooltipModule
+} from '@angular/material';
 
 
-import {AppComponent} from './app.component';
-import {HomeComponent} from './components/home/home.component';
-import {SocialNetwortkComponent} from './components/header/social-networtk/social-networtk.component';
-import {StoreTitleComponent} from './components/header/store-title/store-title.component';
-import {HeaderComponent} from './components/header/header.component';
-import {FooterComponent} from './components/footer/footer.component';
-import {PreloadAllModules, RouterModule} from '@angular/router';
-
-import {ROUTES} from './app.routes';
-import {SharedModule} from './components/shared/shared.module';
-
-import {RestaurantsComponent} from './components/restaurants/restaurants.component';
-import {RestaurantComponent} from './components/restaurants/restaurant/restaurant.component';
-import {RestaurantDetailComponent} from './components/restaurants/restaurant-detail/restaurant-detail.component';
-import {MenuComponent} from './components/restaurants/restaurant-detail/menu/menu.component';
-import {MenuItemComponent} from './components/restaurants/restaurant-detail/menu-item/menu-item.component';
-import {ShoppingCartComponent} from './components/restaurants/restaurant-detail/shopping-cart/shopping-cart.component';
-import {ReviewsComponent} from './components/restaurants/restaurant-detail/reviews/reviews.component';
-import {NotFoundComponent} from './components/not-found/not-found.component';
-import {ApplicationErrorHandler} from './app.error-handler';
-import { LoginComponent } from './components/security/login/login.component';
-import { UserDetailComponent } from './components/header/user-detail/user-detail.component';
 
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        HomeComponent,
-        SocialNetwortkComponent,
-        StoreTitleComponent,
-        HeaderComponent,
-        FooterComponent,
-        RestaurantsComponent,
-        RestaurantComponent,
-        RestaurantDetailComponent,
-        MenuComponent,
-        MenuItemComponent,
-        ShoppingCartComponent,
-        ReviewsComponent,
-        NotFoundComponent,
-        LoginComponent,
-        UserDetailComponent
-    ],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        HttpClientModule,
-        SharedModule.forRoot(),
-        RouterModule.forRoot(ROUTES, {preloadingStrategy: PreloadAllModules})
-    ],
-    providers: [
-        {provide: LocationStrategy, useClass: HashLocationStrategy},
-        {provide: LOCALE_ID, useValue: 'pt'},
-        {provide: ErrorHandler, useClass: ApplicationErrorHandler}
-    ],
-    bootstrap: [AppComponent]
-})
+  declarations: [
+    AppComponent,
+    MenuComponent,
+    DishdetailComponent,
+    HeaderComponent,
+    FooterComponent,
+    HomeComponent,
+    AboutComponent,
+    ContactComponent,
+    LoginComponent
+  ],
+  imports: [
+    BrowserModule,
+    MatToolbarModule,
+    FlexLayoutModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    FormsModule, 
+    ReactiveFormsModule,
 
-export class AppModule {
-}
+    //material    
+    MatFormFieldModule,    
+    MatAutocompleteModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    MatExpansionModule,
+    MatGridListModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatRippleModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatSlideToggleModule,
+    MatSliderModule,
+    MatSnackBarModule,
+    MatStepperModule,
+    MatTableModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatTooltipModule,
+    MatNativeDateModule,    
+  ],
+  providers: [DishService,
+  PromotionService, LeaderService],
+  entryComponents:[
+    LoginComponent
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
