@@ -1,5 +1,5 @@
-<mat-toolbar color="primary">
-    <span><img src="/assets/images/logo.png" height=30 width=41></span>
+<mat-toolbar class="header">
+    <span><img src="/assets/images/logo.png" height=auto width=30px></span>
     <a mat-button routerLink="/home" routerLinkActive="active" id="hbtn"><span class="fa fa-home fa-lg"></span> Home</a>
     <a mat-button routerLink="/aboutus" routerLinkActive="active" id="hbtn"><span class="fa fa-info fa-lg"></span> About</a>
     <a mat-button routerLink="/menu" routerLinkActive="active" id="hbtn"><span class="fa fa-list fa-lg"></span> Menu</a>
@@ -18,12 +18,17 @@
       fxLayoutGap="10px">
   
     <div fxFlex fxFlex.gt-sm="50%">
-      <h1>Ristorante Con Fusion</h1>
-      <p>We take inspiration from the World's best cuisines, and create a unique fusion experience. Our lipsmacking creations
-        will tickle your culinary senses!</p>
+      <h1>The Red Door</h1>
+      <p>Nos inspiramos en las mejores cocinas del mundo y creamos una experiencia de fusión única. 
+        ¡Nuestras creaciones le harán cosquillas a tus sentidos culinarios!</p>
     </div>
-    <div fxFlex fxFlex.gt-sm="20%">
-      <img src="/assets/images/logo.png" alt="Logo">
+    <div class="md-8">
+      
+        <mat-toolbar-row>
+            <img class="enmarcada" src="../../assets/images/alberto.png" alt="Avatar">
+          </mat-toolbar-row>
+    
+
     </div>
-    <div fxFlex></div>
+   
   </div>
