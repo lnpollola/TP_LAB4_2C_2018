@@ -29,7 +29,7 @@
 .active {
   background-color:crimson;
   color: black;
-  transition-duration: 0.8s;
+  transition-duration: 1.8s;
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
@@ -39,14 +39,14 @@
 }
 
 
-mat-toolbar-row{
+/* mat-toolbar-row{
   padding:10px;
-  margin:10px; /* distancia entre el borde y el contenido */
-}
+  margin:10px; /* distancia entre el borde y el contenido 
+} */
+
 .enmarcada{
   position: relative;
-  /*border:1px solid #000; /* ancho - tipo - color */
-  /*padding:10px; /* distancia entre la img y el borde */
+
   margin:10px; /* distancia entre el borde y el contenido */
   width:120px; /* el ancho de la img */
   border-radius:150px;
@@ -71,7 +71,7 @@ span{
   margin: 5px;
 
 }
-
+/* 
 .usuario-spacer {
   flex: 1 1 auto;
-}
+} */

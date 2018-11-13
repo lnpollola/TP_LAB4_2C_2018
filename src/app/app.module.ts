@@ -24,6 +24,8 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms'; 
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { HttpModule } from '@angular/http';
+
 import {
   MatFormFieldModule,
   MatAutocompleteModule,
@@ -112,6 +114,7 @@ import {
     MatToolbarModule,
     MatTooltipModule,
     MatNativeDateModule,    
+    HttpModule,
   ],
   providers: [DishService,
   PromotionService, LeaderService],
