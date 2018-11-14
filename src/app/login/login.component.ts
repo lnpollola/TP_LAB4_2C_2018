@@ -6,7 +6,7 @@ import {TimerObservable} from "rxjs/observable/TimerObservable";
 import {LoginService} from '../../../src/app/services/login.service';
 import {Usuario} from '../clases/usuario';
 import { MatDialog, MatDialogRef} from '@angular/material';
-
+import { delay } from 'rxjs/operators';
 
 
 @Component({
@@ -47,9 +47,14 @@ export class LoginComponent implements OnInit {
   {
     
     // console.log( JSON.parse(localStorage.getItem('data')) );
-    localStorage.setItem('token',  JSON.parse(localStorage.getItem('data')).token  );
-    localStorage.setItem('usuario',  JSON.stringify(JSON.parse(localStorage.getItem('data')).datos)  ) ;
-  }
+
+    do 
+    {
+        localStorage.setItem('token',  localStorage.data.token  );
+        // localStorage.setItem('usuario',  JSON.stringify(JSON.parse(localStorage.getItem('data')).datos)  ) ;    
+    }while ( localStorage.getItem('data') === undefined)
+
+ }
 
   Entrar(){ 
     
@@ -65,15 +70,18 @@ export class LoginComponent implements OnInit {
 
       this._login.ServiceLogin(datosLogin).subscribe( data =>{
   
-        localStorage.setItem('data', data._body );
+        // delay(2000);
+        var respuesta = JSON.parse(data._body);
+        console.log(respuesta);
+        localStorage.setItem('data', JSON.stringify(respuesta) );
       
         // console.log( JSON.parse(this.dataRespuesta._body).token  );
           this.dialog.closeAll();
           this.router.navigate(['menu']); 
          
       });
-
-      this.seteoLocalStorage();
+    //   delay(2000);
+    //   this.seteoLocalStorage();
   }
 
   

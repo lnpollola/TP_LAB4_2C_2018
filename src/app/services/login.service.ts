@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { GenericoService} from '../services/generico.service';
 import { Observable } from 'rxjs';
-
+import { delay } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,7 @@ export class LoginService {
     //console.log("entro LoginService" + datosLogin);
     
     return this._generico.httpPost("Sesion/",datosLogin)
-        .pipe(data =>{return data;}); 
+        .pipe(data =>{ delay(2000); return data;}); 
 
   }
 
