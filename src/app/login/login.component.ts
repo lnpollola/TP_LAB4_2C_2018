@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
     returnUrl: string;
     datacallback: string;
     public dataRespuesta:any;
+    respuesta: any;
 
     constructor(
         private formBuilder: FormBuilder,
@@ -43,18 +44,27 @@ export class LoginComponent implements OnInit {
       get f() { return this.loginForm.controls; }
 
 
-  seteoLocalStorage()
-  {
+    // console.log(localStorage.getItem('data'));
+
+    // var token =   localStorage.getItem('token');
+    // var datos = localStorage.getItem('datos');
+    // var usuario = localStorage.getItem('usuario');
+
+    // console.log("Token: ",token);
+    // console.log("Datos: ",datos);
+    // console.log("Usuario: ",usuario);
     
+
+    // localStorage.setItem('token', JSON.stringify(token) );
+    // localStorage.setItem('datos', JSON.stringify(datos) );
     // console.log( JSON.parse(localStorage.getItem('data')) );
 
-    do 
-    {
-        localStorage.setItem('token',  localStorage.data.token  );
-        // localStorage.setItem('usuario',  JSON.stringify(JSON.parse(localStorage.getItem('data')).datos)  ) ;    
-    }while ( localStorage.getItem('data') === undefined)
+    // do 
+    // {
+    //     localStorage.setItem('token',  localStorage.data.token  );
+    //     // localStorage.setItem('usuario',  JSON.stringify(JSON.parse(localStorage.getItem('data')).datos)  ) ;    
+    // }while ( localStorage.getItem('data') === undefined)
 
- }
 
   Entrar(){ 
     
@@ -70,18 +80,23 @@ export class LoginComponent implements OnInit {
 
       this._login.ServiceLogin(datosLogin).subscribe( data =>{
   
-        // delay(2000);
-        var respuesta = JSON.parse(data._body);
-        console.log(respuesta);
-        localStorage.setItem('data', JSON.stringify(respuesta) );
-      
-        // console.log( JSON.parse(this.dataRespuesta._body).token  );
+        this.respuesta = JSON.parse(data._body);
+        localStorage.setItem('data', JSON.stringify(this.respuesta) );
+        localStorage.setItem('usuario', JSON.stringify(this.respuesta.datos) );
+        
+        localStorage.setItem('token', JSON.stringify(this.respuesta.token) );
+        // console.log(this.respuesta);
+
+        // console.log(this.respuesta.datos);
+
+        if( this.respuesta.datos.estado === "Activo")  
+        {
           this.dialog.closeAll();
-          this.router.navigate(['menu']); 
-         
+          this.router.navigate(['home']); 
+        }
       });
     //   delay(2000);
-    //   this.seteoLocalStorage();
+
   }
 
   
