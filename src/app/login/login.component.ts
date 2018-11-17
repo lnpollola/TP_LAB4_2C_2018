@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter} from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Validators, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import {Subscription} from "rxjs";
@@ -15,6 +15,8 @@ import { delay } from 'rxjs/operators';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+
+
 
   loginForm: FormGroup;
     loading = false;
@@ -44,27 +46,7 @@ export class LoginComponent implements OnInit {
       get f() { return this.loginForm.controls; }
 
 
-    // console.log(localStorage.getItem('data'));
-
-    // var token =   localStorage.getItem('token');
-    // var datos = localStorage.getItem('datos');
-    // var usuario = localStorage.getItem('usuario');
-
-    // console.log("Token: ",token);
-    // console.log("Datos: ",datos);
-    // console.log("Usuario: ",usuario);
-    
-
-    // localStorage.setItem('token', JSON.stringify(token) );
-    // localStorage.setItem('datos', JSON.stringify(datos) );
-    // console.log( JSON.parse(localStorage.getItem('data')) );
-
-    // do 
-    // {
-    //     localStorage.setItem('token',  localStorage.data.token  );
-    //     // localStorage.setItem('usuario',  JSON.stringify(JSON.parse(localStorage.getItem('data')).datos)  ) ;    
-    // }while ( localStorage.getItem('data') === undefined)
-
+  
 
   Entrar(){ 
     
@@ -78,20 +60,22 @@ export class LoginComponent implements OnInit {
      
       let datosLogin = new Usuario(this.f.username.value, this.f.password.value);
 
-      this._login.ServiceLogin(datosLogin).subscribe( data =>{
+      this._login.ServiceLogin(datosLogin)
+      .subscribe( data =>{
   
 
-        // console.log(data._body);
         this.respuesta = JSON.parse(data._body);
 
-
-        localStorage.setItem('data', JSON.stringify(this.respuesta) );
-        localStorage.setItem('usuario', JSON.stringify(this.respuesta.datos) );
-        
-        localStorage.setItem('token', JSON.stringify(this.respuesta.token) );
-        // console.log(this.respuesta);
-
-        console.log(this.respuesta.datos);
+        if (this.respuesta)
+        {
+          localStorage.setItem('data', JSON.stringify(this.respuesta) );
+          localStorage.setItem('usuario', JSON.stringify(this.respuesta.datos) );
+          
+          localStorage.setItem('token', JSON.stringify(this.respuesta.token) );
+        }
+        else{
+          alert("error");
+        }
 
         if( this.respuesta.datos.perfil === "admin")  
         {
@@ -99,8 +83,7 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['home']); 
         }
       });
-    //   delay(2000);
-
+    
   }
 
   
