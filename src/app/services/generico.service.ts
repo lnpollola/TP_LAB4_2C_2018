@@ -16,7 +16,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 export class GenericoService {
 
 
-  api="http://localhost/backEndComanda/";
+  api="http://localhost/backendVFINAL/";
   //api="https://dvlacomanda.000webhostapp.com/backEndComanda/"
   
   constructor(public http:Http) { }

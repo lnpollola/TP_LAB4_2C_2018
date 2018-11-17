@@ -80,16 +80,20 @@ export class LoginComponent implements OnInit {
 
       this._login.ServiceLogin(datosLogin).subscribe( data =>{
   
+
+        // console.log(data._body);
         this.respuesta = JSON.parse(data._body);
+
+
         localStorage.setItem('data', JSON.stringify(this.respuesta) );
         localStorage.setItem('usuario', JSON.stringify(this.respuesta.datos) );
         
         localStorage.setItem('token', JSON.stringify(this.respuesta.token) );
         // console.log(this.respuesta);
 
-        // console.log(this.respuesta.datos);
+        console.log(this.respuesta.datos);
 
-        if( this.respuesta.datos.estado === "Activo")  
+        if( this.respuesta.datos.perfil === "admin")  
         {
           this.dialog.closeAll();
           this.router.navigate(['home']); 
