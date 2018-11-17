@@ -72,6 +72,7 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('usuario', JSON.stringify(this.respuesta.datos) );
           
           localStorage.setItem('token', JSON.stringify(this.respuesta.token) );
+          this.dialog.closeAll();
         }
         else{
           alert("error");
@@ -79,7 +80,7 @@ export class LoginComponent implements OnInit {
 
         if( this.respuesta.datos.perfil === "admin")  
         {
-          this.dialog.closeAll();
+         
           this.router.navigate(['home']); 
         }
       });

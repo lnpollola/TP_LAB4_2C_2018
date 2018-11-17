@@ -15,7 +15,7 @@ import { LeaderService} from '../services/leader.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+  perfilUsuario: string; 
   dish: Dish;
   promotion: Promotion;
   leader: Leader;
@@ -33,6 +33,9 @@ export class HomeComponent implements OnInit {
 
     this.leaderservice.getFeaturedLeader()
     .subscribe(leader => this.leader = leader);
+
+    this.perfilUsuario = JSON.parse(localStorage.getItem('usuario')).perfil;
+
   }
 
 }
