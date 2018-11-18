@@ -31,7 +31,7 @@ export class HeaderComponent implements OnInit {
     else 
     {
       this.usuario = JSON.parse(localStorage.getItem('usuario')) ;
-      this.nombre =this.usuario.nombre;
+      this.nombre =this.usuario.usuario;
       this.IngresoBool=true;
       this.perfilUsuario = JSON.parse(localStorage.getItem('usuario')).perfil;
     }

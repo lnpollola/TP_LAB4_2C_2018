@@ -8,6 +8,7 @@
     <a mat-button routerLink="/contactus" routerLinkActive="active" id="hbtn"><span class="fa fa-address-card fa-lg"></span> Contact</a>
     <a mat-button  *ngIf="IngresoBool" routerLink="/listado" routerLinkActive="active" id="hbtn"><span class="fa fa-book fa-lg"></span> Listado</a>
     <span class="flex-spacer"></span>
+    ¡Hola, {{nombre}}!
     <a mat-button  *ngIf="!IngresoBool" (click)="openLoginForm()" id="hbtn"><span class="fa fa-sign-in fa-lg"></span> Ingresar</a>
     <a mat-button *ngIf="IngresoBool" (click)="logout()" id="hbtn"><span class="fa fa-sign-out fa-lg"></span> Salir</a>
 
@@ -25,7 +26,7 @@
   
     <div fxFlex fxFlex.gt-sm="60%">
       <div>
-      <h1>Bienvenido {{nombre}} a The Red Door</h1>
+      <h1>Bienvenido a The Red Door</h1>
     </div>
       <p>Nos inspiramos en las mejores cocinas del mundo y creamos una experiencia de fusión única. 
         ¡Nuestras creaciones le harán cosquillas a tus sentidos culinarios!</p>

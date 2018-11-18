@@ -18,10 +18,11 @@
           <br>
           <label for="numeroMesa">Numero de mesa</label>
           <input class="form-control miInput" id="numeroMesa" placeholder="mesa" type="text" name="mesa" value="0002" [(ngModel)]="mesa">
-          
+          <br>
           <label for="fotoMesa">Foto mesa</label>
          
-          <p-fileUpload id="fotoMesa" mode="advanced" name="mesa" url="http://localhost:8080/TP_PROG3_1C_2018/backend/Mesas/FotoMesa"></p-fileUpload>
+          <p-fileUpload id="fotoMesa" mode="basic" name="mesa" url="http://localhost/backendVFINAL/Mesas/FotoMesa"></p-fileUpload>
+       <br>
         </form>
         <input type="text" placeholder="Busqueda" class="form-control miInput" [(ngModel)]="busqueda" >
         <br>
