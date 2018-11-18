@@ -22,7 +22,7 @@ export class GenericoService {
   constructor(public http:Http) { }
   
 
-  public httpGet(metodo:string, objeto:any):Observable<any>{
+  public httpGet(metodo:string):Observable<any>{
 
     return this.http
     .get(this.api + metodo)

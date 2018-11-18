@@ -25,6 +25,7 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { HttpModule } from '@angular/http';
+import {FileUploadModule} from 'primeng/fileupload';
 
 import {
   MatFormFieldModule,
@@ -56,8 +57,14 @@ import {
   MatTableModule,
   MatTabsModule,
   MatToolbarModule,
-  MatTooltipModule
+  MatTooltipModule,
+  
 } from '@angular/material';
+import { FiltroPipe } from './pipes/filtro.pipe';
+import { ColorTimerDirective } from './directivas/color-timer.directive';
+import { EstadoPedidoDirective } from './directivas/estado-pedido.directive';
+import { FondoDirective } from './directivas/fondo.directive';
+import { TipoProductoDirective } from './directivas/tipo-producto.directive';
 
 
 
@@ -72,7 +79,12 @@ import {
     HomeComponent,
     AboutComponent,
     ContactComponent,
-    LoginComponent
+    LoginComponent,
+    FiltroPipe,
+    ColorTimerDirective,
+    EstadoPedidoDirective,
+    FondoDirective,
+    TipoProductoDirective
   ],
   imports: [
     BrowserModule,
@@ -82,7 +94,7 @@ import {
     AppRoutingModule,
     FormsModule, 
     ReactiveFormsModule,
-
+    FileUploadModule,
     //material    
     MatFormFieldModule,    
     MatAutocompleteModule,

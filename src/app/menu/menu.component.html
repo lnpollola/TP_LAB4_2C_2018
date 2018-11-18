@@ -1,27 +1,109 @@
 <app-header> </app-header>
+
 <div class="container-fluid"
      fxLayout="column"
      fxLayoutGap="10px">
 
   <div fxFlex>
-    <div>
+    <!-- <div>
       <h3>Menu</h3>
       <hr>
-    </div>
+    </div> -->
   </div>
 
-  <div fxFlex *ngIf="dishes">
-    <mat-grid-list cols="2" rowHeight="200px">
+  <div fxFlex>
+    <!-- <mat-grid-list cols="2" rowHeight="200px">
       <mat-grid-tile *ngFor="let dish of dishes" [routerLink]="['/dishdetail',dish.id]">
         <img height="200px" src={{dish.image}} alt={{dish.name}}>
         <mat-grid-tile-footer>
           <h1 mat-line>{{dish.name | uppercase}}</h1>
         </mat-grid-tile-footer>
       </mat-grid-tile>
-    </mat-grid-list>
-  </div>
-  <div [hidden]="dishes">
-    <mat-spinner></mat-spinner><h4>Loading . . . Please Wait</h4>
+    </mat-grid-list> -->
+
+    <div class=" container">
+        <div class="row">
+      <div class="tabla-prod col-sm-4">
+        <form class="form-group" action="">
+          <br>
+          <label for="numeroMesa">Numero de mesa</label>
+          <input class="form-control miInput" id="numeroMesa" placeholder="mesa" type="text" name="mesa" value="0002" [(ngModel)]="mesa">
+          
+          <label for="fotoMesa">Foto mesa</label>
+         
+          <p-fileUpload id="fotoMesa" mode="advanced" name="mesa" url="http://localhost:8080/TP_PROG3_1C_2018/backend/Mesas/FotoMesa"></p-fileUpload>
+        </form>
+        <input type="text" placeholder="Busqueda" class="form-control miInput" [(ngModel)]="busqueda" >
+        <br>
+        <table class="table table-hover ">
+            <thead>
+              <th>Producto</th> <th>Precio</th> <th>Accion</th>
+            </thead>
+            <tbody *ngIf="listaProductos">
+              <tr *ngFor="let producto of (listaProductos | filtro: busqueda)">
+                  <td estilo [tipo]="producto.responsable">{{producto.nombre}}</td>
+                  <td>{{producto.precio | currency: '$ ': true: '1.1-2'}}</td>
+                  <!-- <td><app-boton-agregar [producto]="producto" (enviar)="AgregarAlPedido($event)"></app-boton-agregar></td> -->
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      
+      
+      
+      
+      
+        <div class="tabla-prod col-sm-4">
+            <h2>Pedido</h2>
+          <table class="table">
+            
+            <thead>
+              <th>Producto</th> <th>Precio</th> <th>Accion</th>
+            </thead>
+            <tbody *ngIf="productosPedido">
+              <tr *ngFor="let producto of productosPedido">
+                
+                  <td>{{producto.nombre}}</td>
+                  <td>{{producto.precio | currency: '$ ': true: '1.1-2'}}</td>
+                  <!-- <td> <app-boton-borrar [objeto]="producto" (enviarABorrar)="QuitarAlPedido($event)" ></app-boton-borrar> </td> -->
+              </tr>
+            </tbody>
+            <tfoot>
+              <td>Total</td> <td>{{totalPedido | currency: '$ ': true: '1.1-2'}} </td>
+            </tfoot>
+          </table>
+        </div>
+        
+        <div class="btn-ingresar col-sm-4 ">
+        <button class="btn btn-success col-sm-12" (click)="IngresarPedido()">Ingresar pedido</button>
+        <div class="card-pedido card col-sm-12"> 
+      
+          <legend>Numero pedido:</legend>
+          <h3 *ngIf="elPedido.id"> {{elPedido.id}} </h3>
+          <legend>Detalle:</legend>
+          <ul *ngFor="let p of elPedido.detalle">
+            <li>{{p.nombre}}</li>
+          </ul>
+          <legend>Total:</legend>
+          <h4 *ngIf="elPedido.id"> {{totalPedido | currency: '$ ': true: '1.1-2'}} </h4>
+          <!-- <div><app-csv *ngIf="elPedido.id" [pedido]="elPedido"></app-csv></div> -->
+          
+          
+        </div>
+        
+      
+       
+      
+       
+        
+      
+      </div>
+      </div>
+        
+      
+      </div>
+      
+
   </div>
 </div>
 
