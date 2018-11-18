@@ -38,6 +38,15 @@
               </select>
             </td>
         </ng-container>
+
+        <ng-container matColumnDef="acciones">
+            <th mat-header-cell *matHeaderCellDef>Acciones </th>
+            <td *matCellDef="let element">
+
+                <app-boton-preparar *ngIf="element.estado=='pendiente'" (lanzador)="TraerTabla()" [id]="element.idDetalle" [tiempoPreparacion]="element.tiempoPreparacion" ></app-boton-preparar>
+                <app-boton-servir *ngIf="element.estado=='en preparacion'" (lanzador)="TraerTabla()" [idDetalle]="element.idDetalle"></app-boton-servir>
+            </td>
+        </ng-container>
       
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

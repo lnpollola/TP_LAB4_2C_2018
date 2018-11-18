@@ -68,6 +68,8 @@ import { TipoProductoDirective } from './directivas/tipo-producto.directive';
 import { BotonAgregarComponent } from './boton-agregar/boton-agregar.component';
 import { BotonBorrarComponent } from './boton-borrar/boton-borrar.component';
 import { TablaPendientesComponent } from './tabla-pendientes/tabla-pendientes.component';
+import { BotonPrepararComponent } from './boton-preparar/boton-preparar.component';
+import { BotonServirComponent } from './boton-servir/boton-servir.component';
 
 
 
@@ -90,7 +92,9 @@ import { TablaPendientesComponent } from './tabla-pendientes/tabla-pendientes.co
     TipoProductoDirective,
     BotonAgregarComponent,
     BotonBorrarComponent,
-    TablaPendientesComponent
+    TablaPendientesComponent,
+    BotonPrepararComponent,
+    BotonServirComponent
   ],
   imports: [
     BrowserModule,

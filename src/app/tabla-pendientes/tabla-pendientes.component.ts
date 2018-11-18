@@ -7,6 +7,7 @@ export interface PeriodicElement {
   weight: number;
   symbol: string;
   preparacion:string;
+  acciones:string;
 }
 
 // const ELEMENT_DATA: PeriodicElement[] = [
@@ -34,7 +35,7 @@ export class TablaPendientesComponent implements OnInit {
   listaPendientes: Array<any>;
   tiempoPreparacion:number;
   
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol', 'preparacion'];
+  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol', 'preparacion', 'acciones'];
   // dataSource = ELEMENT_DATA;
 
 
