@@ -73,18 +73,53 @@ export class LoginComponent implements OnInit {
           
           localStorage.setItem('token', JSON.stringify(this.respuesta.token) );
           this.dialog.closeAll();
+          this.router.navigate(['']); 
         }
         else{
           alert("error");
-        }
-
-        if( this.respuesta.datos.perfil === "admin")  
-        {
-         
           this.router.navigate(['home']); 
         }
+
+       
       });
     
+  }
+
+  LoginSocio()
+  {
+      this.loginForm.controls['username'].setValue('admin@gmail.com');
+      this.loginForm.controls['password'].setValue('admin');
+  }
+
+  LoginMozo()
+  {
+    this.loginForm.controls['username'].setValue('mozo1@gmail.com');
+    this.loginForm.controls['password'].setValue('1234');
+  }
+
+  LoginTragos()
+  {
+    this.loginForm.controls['username'].setValue('barra1@gmail.com');
+    this.loginForm.controls['password'].setValue('1234');
+  }
+
+  
+  LoginChopera()
+  {
+    this.loginForm.controls['username'].setValue('chopera1@gmail.com');
+    this.loginForm.controls['password'].setValue('1234');
+  }
+
+  LoginCocina()
+  {
+    this.loginForm.controls['username'].setValue('cocina1@gmail.com');
+    this.loginForm.controls['password'].setValue('1234');
+  }
+
+  LoginCandy()
+  {
+    this.loginForm.controls['username'].setValue('candy1@gmail.com');
+    this.loginForm.controls['password'].setValue('1234');
   }
 
   

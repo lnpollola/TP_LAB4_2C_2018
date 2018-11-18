@@ -13,7 +13,8 @@ export class HeaderComponent implements OnInit {
   @Input() perfil: any;
   @Output() emiterHeader:EventEmitter<any> = new EventEmitter();
   
-  perfilUsuario:boolean;
+  IngresoBool:boolean;
+  perfilUsuario:string;
   nombre:string;
 
   constructor(private dialog: MatDialog) { }
@@ -24,14 +25,15 @@ export class HeaderComponent implements OnInit {
     if(localStorage.getItem('usuario') == null )
     {
       console.log("no hay usuario");
-      this.perfilUsuario=false;
+      this.IngresoBool=false;
       this.nombre='';
     }
     else 
     {
       this.usuario = JSON.parse(localStorage.getItem('usuario')) ;
       this.nombre =this.usuario.nombre;
-      this.perfilUsuario=true;
+      this.IngresoBool=true;
+      this.perfilUsuario = JSON.parse(localStorage.getItem('usuario')).perfil;
     }
 
     
@@ -41,10 +43,17 @@ export class HeaderComponent implements OnInit {
   openLoginForm(){
     this.dialog.open(LoginComponent, {width:'300px', height:'550px'});
     
-    this.dialog.afterAllClosed.subscribe(result => {
-      this.emiterHeader.emit();
-    });
+    // this.dialog.afterAllClosed.subscribe(result => {
+    //   this.emiterHeader.emit();
+    // });
 
+  }
+
+  logout()
+  {
+    localStorage.clear();
+    this.IngresoBool=false;
+    
   }
 
 
