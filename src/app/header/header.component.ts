@@ -42,11 +42,7 @@ export class HeaderComponent implements OnInit {
 
   openLoginForm(){
     this.dialog.open(LoginComponent, {width:'300px', height:'550px'});
-    
-    // this.dialog.afterAllClosed.subscribe(result => {
-    //   this.emiterHeader.emit();
-    // });
-
+   
   }
 
   logout()
