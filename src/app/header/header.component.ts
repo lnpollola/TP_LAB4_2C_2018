@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef} from '@angular/material';
 import { LoginComponent } from '../login/login.component';
 import { Input, Output, EventEmitter } from '@angular/core';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -17,7 +18,7 @@ export class HeaderComponent implements OnInit {
   perfilUsuario:string;
   nombre:string;
 
-  constructor(private dialog: MatDialog) { }
+  constructor(private dialog: MatDialog,   private router: Router) { }
 
   ngOnInit() {
 
@@ -49,6 +50,7 @@ export class HeaderComponent implements OnInit {
   {
     localStorage.clear();
     this.IngresoBool=false;
+    this.router.navigate(['']);
     
   }
 

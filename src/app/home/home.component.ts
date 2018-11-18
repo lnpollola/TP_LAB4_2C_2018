@@ -34,7 +34,17 @@ export class HomeComponent implements OnInit {
     this.leaderservice.getFeaturedLeader()
     .subscribe(leader => this.leader = leader);
 
-    this.perfilUsuario = JSON.parse(localStorage.getItem('usuario')).perfil;
+    if(localStorage.getItem('usuario') == null )
+    {
+      console.log("no hay usuario");
+    }
+    else 
+    {
+      this.perfilUsuario = JSON.parse(localStorage.getItem('usuario')).perfil;
+    }
+
+
+    // this.perfilUsuario = JSON.parse(localStorage.getItem('usuario')).perfil;
 
   }
 

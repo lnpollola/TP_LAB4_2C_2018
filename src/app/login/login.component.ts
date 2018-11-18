@@ -73,7 +73,7 @@ export class LoginComponent implements OnInit {
           
           localStorage.setItem('token', JSON.stringify(this.respuesta.token) );
           this.dialog.closeAll();
-          this.router.navigate(['']); 
+          this.router.navigate(['home']); 
         }
         else{
           alert("error");
