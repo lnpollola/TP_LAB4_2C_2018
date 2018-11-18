@@ -1,0 +1,36 @@
+<app-header></app-header>
+<div class="container">
+
+    <div class="tabla-pendientes">
+    <table class="table miTabla" style="color: black">
+      <thead><th>idPedido</th>
+        <th>Producto</th>
+        <th>Sector</th>
+        <th>Estado</th>
+        <th>Tiempo preparacion</th>
+        <th>Accion</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let detalle of listaPendientes" fondoEstado [estado]="detalle.estado" >
+          <td> {{detalle.idPedido}} </td>
+          <td> {{detalle.producto}} </td>
+          <td> {{detalle.sector}} </td>
+          <td> {{detalle.estado}} </td>
+          <td> <select [(ngModel)]="detalle.tiempoPreparacion">
+              <option value="5">5</option>
+              <option value="10">10</option>
+              <option value="20">20</option>
+              <option value="30">30</option>
+            </select>
+           </td>
+           <td>
+             HOLA
+             <!-- <app-boton-preparar *ngIf="detalle.estado=='pendiente'" (lanzador)="TraerTabla()" [id]="detalle.idDetalle" [tiempoPreparacion]="detalle.tiempoPreparacion" ></app-boton-preparar> -->
+             <!-- <app-boton-servir *ngIf="detalle.estado=='en preparacion'" (lanzador)="TraerTabla()" [idDetalle]="detalle.idDetalle"></app-boton-servir> -->
+           </td>
+        </tr>
+      </tbody>
+      
+    </table>
+    </div>
+    </div>

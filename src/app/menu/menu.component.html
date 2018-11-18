@@ -20,9 +20,9 @@
           <input class="form-control miInput" id="numeroMesa" placeholder="mesa" type="text" name="mesa" value="0002" [(ngModel)]="mesa">
           <br>
           <label for="fotoMesa">Foto mesa</label>
-         
+          <br>
           <p-fileUpload id="fotoMesa" mode="basic" name="mesa" url="http://localhost/backendVFINAL/Mesas/FotoMesa"></p-fileUpload>
-       <br>
+    
         </form>
         <input type="text" placeholder="Busqueda" class="form-control miInput" [(ngModel)]="busqueda" >
         <br>
@@ -62,7 +62,7 @@
         </div>
         
         <div class="btn-ingresar col-sm-4 ">
-        <button class="btn btn-success col-sm-12" (click)="IngresarPedido()">Ingresar pedido</button>
+        <button class="btn btn-primary col-sm-12" (click)="IngresarPedido()">Ingresar pedido</button>
         <div class="card-pedido card col-sm-12" style="padding: 5%"> 
       
           <legend>Numero pedido:</legend>

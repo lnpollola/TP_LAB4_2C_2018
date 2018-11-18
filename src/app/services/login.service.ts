@@ -12,7 +12,7 @@ export class LoginService {
 
   public ServiceLogin(datosLogin):Observable<any> {
     //console.log("entro LoginService" + datosLogin);
-    
+    localStorage.clear();
     return this._generico.httpPost("Sesion/",datosLogin)
         .pipe(data =>{ delay(2000); return data;}); 
 

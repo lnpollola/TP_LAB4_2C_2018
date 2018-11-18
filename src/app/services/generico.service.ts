@@ -32,7 +32,6 @@ export class GenericoService {
 
   public httpPost(metodo:string, objeto:any):Observable<any>
   { 
-    localStorage.clear();
     return this.http.post(this.api + metodo, objeto)
     .pipe(catchError(this.handleError));
   }

@@ -4,11 +4,12 @@
 
     <a mat-button routerLink="/home" routerLinkActive="active" id="hbtn"><span class="fa fa-home fa-lg"></span> Home</a>
     <a mat-button routerLink="/aboutus" routerLinkActive="active" id="hbtn"><span class="fa fa-info fa-lg"></span> About</a>
-    <a mat-button *ngIf="perfilUsuario == 'mozo'" routerLink="/menu" routerLinkActive="active" id="hbtn"><span class="fa fa-list fa-lg"></span> Menu</a>
+    <a mat-button *ngIf="perfilUsuario == 'mozo'" routerLink="/menu" routerLinkActive="active" id="hbtn"><span class="fa fa-cutlery fa-lg"></span> Menu</a>
     <a mat-button routerLink="/contactus" routerLinkActive="active" id="hbtn"><span class="fa fa-address-card fa-lg"></span> Contact</a>
-    <a mat-button  *ngIf="IngresoBool" routerLink="/listado" routerLinkActive="active" id="hbtn"><span class="fa fa-book fa-lg"></span> Listado</a>
+    <a mat-button  *ngIf="IngresoBool && perfilUsuario != 'mozo'" routerLink="/listado" routerLinkActive="active" id="hbtn"><span class="fa fa-book fa-lg"></span> Listado</a>
+    <a mat-button  *ngIf="IngresoBool && perfilUsuario == 'mozo'" routerLink="/listadoMesas" routerLinkActive="active" id="hbtn"><span class="fa fa-info-circle fa-lg"></span> Listado de Mesas</a>
     <span class="flex-spacer"></span>
-    ¡Hola, {{nombre}}!
+    ¡Hola {{nombre}}!
     <a mat-button  *ngIf="!IngresoBool" (click)="openLoginForm()" id="hbtn"><span class="fa fa-sign-in fa-lg"></span> Ingresar</a>
     <a mat-button *ngIf="IngresoBool" (click)="logout()" id="hbtn"><span class="fa fa-sign-out fa-lg"></span> Salir</a>
 
@@ -29,7 +30,7 @@
       <h1>Bienvenido a The Red Door</h1>
     </div>
       <p>Nos inspiramos en las mejores cocinas del mundo y creamos una experiencia de fusión única. 
-        ¡Nuestras creaciones le harán cosquillas a tus sentidos culinarios!</p>
+        ¡Nuestras creaciones te sorprenderan!</p>
     </div>
     <div class="md-8">
       
