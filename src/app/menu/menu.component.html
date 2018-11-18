@@ -5,25 +5,15 @@
      fxLayoutGap="10px">
 
   <div fxFlex>
-    <!-- <div>
-      <h3>Menu</h3>
-      <hr>
-    </div> -->
+
   </div>
 
   <div fxFlex>
-    <!-- <mat-grid-list cols="2" rowHeight="200px">
-      <mat-grid-tile *ngFor="let dish of dishes" [routerLink]="['/dishdetail',dish.id]">
-        <img height="200px" src={{dish.image}} alt={{dish.name}}>
-        <mat-grid-tile-footer>
-          <h1 mat-line>{{dish.name | uppercase}}</h1>
-        </mat-grid-tile-footer>
-      </mat-grid-tile>
-    </mat-grid-list> -->
 
-    <div class=" container">
-        <div class="row">
-      <div class="tabla-prod col-sm-4">
+    <div class="container">
+    
+      <div class="row">
+      <div class="tabla-prod col-sm-4" style="padding: 5%">
         <form class="form-group" action="">
           <br>
           <label for="numeroMesa">Numero de mesa</label>
@@ -35,7 +25,7 @@
         </form>
         <input type="text" placeholder="Busqueda" class="form-control miInput" [(ngModel)]="busqueda" >
         <br>
-        <table class="table table-hover ">
+        <table class="table">
             <thead>
               <th>Producto</th> <th>Precio</th> <th>Accion</th>
             </thead>
@@ -43,17 +33,13 @@
               <tr *ngFor="let producto of (listaProductos | filtro: busqueda)">
                   <td estilo [tipo]="producto.responsable">{{producto.nombre}}</td>
                   <td>{{producto.precio | currency: '$ ': true: '1.1-2'}}</td>
-                  <!-- <td><app-boton-agregar [producto]="producto" (enviar)="AgregarAlPedido($event)"></app-boton-agregar></td> -->
+                  <td><app-boton-agregar [producto]="producto" (enviar)="AgregarAlPedido($event)"></app-boton-agregar></td>
               </tr>
             </tbody>
           </table>
         </div>
       
-      
-      
-      
-      
-        <div class="tabla-prod col-sm-4">
+        <div class="tabla-prod col-sm-4" style="padding: 5%">
             <h2>Pedido</h2>
           <table class="table">
             
@@ -65,7 +51,7 @@
                 
                   <td>{{producto.nombre}}</td>
                   <td>{{producto.precio | currency: '$ ': true: '1.1-2'}}</td>
-                  <!-- <td> <app-boton-borrar [objeto]="producto" (enviarABorrar)="QuitarAlPedido($event)" ></app-boton-borrar> </td> -->
+                  <td> <app-boton-borrar [objeto]="producto" (enviarABorrar)="QuitarAlPedido($event)" ></app-boton-borrar> </td>
               </tr>
             </tbody>
             <tfoot>
@@ -76,7 +62,7 @@
         
         <div class="btn-ingresar col-sm-4 ">
         <button class="btn btn-success col-sm-12" (click)="IngresarPedido()">Ingresar pedido</button>
-        <div class="card-pedido card col-sm-12"> 
+        <div class="card-pedido card col-sm-12" style="padding: 5%"> 
       
           <legend>Numero pedido:</legend>
           <h3 *ngIf="elPedido.id"> {{elPedido.id}} </h3>
@@ -87,23 +73,12 @@
           <legend>Total:</legend>
           <h4 *ngIf="elPedido.id"> {{totalPedido | currency: '$ ': true: '1.1-2'}} </h4>
           <!-- <div><app-csv *ngIf="elPedido.id" [pedido]="elPedido"></app-csv></div> -->
-          
-          
-        </div>
-        
-      
-       
-      
-       
-        
-      
-      </div>
-      </div>
-        
-      
-      </div>
-      
 
+        </div>
+
+      </div>
+      </div>
+      </div>
   </div>
 </div>
 

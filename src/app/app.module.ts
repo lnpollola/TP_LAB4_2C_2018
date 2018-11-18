@@ -65,6 +65,8 @@ import { ColorTimerDirective } from './directivas/color-timer.directive';
 import { EstadoPedidoDirective } from './directivas/estado-pedido.directive';
 import { FondoDirective } from './directivas/fondo.directive';
 import { TipoProductoDirective } from './directivas/tipo-producto.directive';
+import { BotonAgregarComponent } from './boton-agregar/boton-agregar.component';
+import { BotonBorrarComponent } from './boton-borrar/boton-borrar.component';
 
 
 
@@ -84,7 +86,9 @@ import { TipoProductoDirective } from './directivas/tipo-producto.directive';
     ColorTimerDirective,
     EstadoPedidoDirective,
     FondoDirective,
-    TipoProductoDirective
+    TipoProductoDirective,
+    BotonAgregarComponent,
+    BotonBorrarComponent
   ],
   imports: [
     BrowserModule,

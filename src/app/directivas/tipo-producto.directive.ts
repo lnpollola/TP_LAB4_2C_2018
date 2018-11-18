@@ -15,13 +15,13 @@ export class TipoProductoDirective {
 
     switch(this.tipo)
     {
-      case "cocina": this.renderer.setElementStyle( this.element.nativeElement, 'color', 'red');
+      case "cocina": this.renderer.setElementStyle( this.element.nativeElement, 'color', 'coral');
       break;
       case "barra": this.renderer.setElementStyle( this.element.nativeElement, 'color', 'blue');
       break;
-      case "chopera": this.renderer.setElementStyle( this.element.nativeElement, 'color', 'orange');
+      case "chopera": this.renderer.setElementStyle( this.element.nativeElement, 'color', 'green');
       break;
-      case "candy": this.renderer.setElementStyle( this.element.nativeElement, 'color', 'yellow');
+      case "candy": this.renderer.setElementStyle( this.element.nativeElement, 'color', 'gray');
       break;
     }
   }
