@@ -46,10 +46,10 @@ export class PedidoService {
     .pipe((data)=>{return data})
   }
 
-  TiempoRestante(idMesa, idPedido)
+  TiempoRestante(idPedido)
   {
 
-    return this.http.httpPost("Pedidos/TiempoRestante",{"idMesa": idMesa, "idPedido": idPedido })
+    return this.http.httpPost("Pedidos/TiempoRestante",{"idPedido": idPedido })
     .pipe((data)=>{return data})
   }
 

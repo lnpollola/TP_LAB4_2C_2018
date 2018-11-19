@@ -98,6 +98,7 @@ import { MapComponent } from './map/map.component';
 import { ClienteComponent } from './cliente/cliente.component';
 import {CheckboxModule} from 'primeng/checkbox';
 import {SharedModule} from 'primeng/primeng';
+import { PruebaPipe } from './pipes/prueba.pipe';
 
 export function tokenGetter() {
   return JSON.parse(localStorage.getItem('token'));
@@ -132,7 +133,8 @@ export function tokenGetter() {
     BtnBorrarUsuarioComponent,
     EstadisticasComponent,
     MapComponent,
-    ClienteComponent
+    ClienteComponent,
+    PruebaPipe
   ],
   imports: [
     BrowserModule,

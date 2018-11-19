@@ -20,7 +20,7 @@ valRest:number;
 
   TraerTiempo()
   {
-    this.httpPedido.TiempoRestante(this.idMesa, this.idPedido)
+    this.httpPedido.TiempoRestante(this.idPedido)
     .subscribe(data=>{
       let respuesta= JSON.parse(data._body);
       this.detalles=respuesta.detalles;
@@ -29,7 +29,7 @@ valRest:number;
 
     })
   }
-  
+
   Presionar()
   {
     console.log(this.valCocinero, this.valMesa, this.valMozo, this.valRest);

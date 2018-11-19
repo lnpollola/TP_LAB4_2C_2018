@@ -9,18 +9,21 @@
         <h3>Ingrese pedido y mesa</h3>
   <div class="form-goup">
   <input type="text" class="form-control" [(ngModel)]="idPedido" placeholder="Pedido" > <br>
-  <input type="text" class="form-control" [(ngModel)]="idMesa" placeholder="Mesa" ><br>
+  <!-- <input type="text" class="form-control" [(ngModel)]="idMesa" placeholder="Mesa" ><br> -->
   <button class="btn btn-primary" (click)="TraerTiempo()" >Traer</button>
 </div>
 </div>
+    </div>
+    <br>
+
 <div class="row">
-  <div class="info-cliente col-sm-8">
+  <!-- <div class="info-cliente col-sm-8"> -->
     <h1>
       {{idPedido}}
     </h1>
     <table style="color: black" class="table">
       <thead>
-        <th>idDetalle</th>
+        <th>Nro. Detalle</th>
         <th>Producto</th>
         <th>Tiempo Restante</th>
       </thead>
@@ -28,6 +31,7 @@
         <tr *ngFor="let detalle of detalles">
           <td> {{detalle.idDetalle}} </td>
           <td> {{detalle.producto}} </td>
+          <td> {{detalle.tiempoRestante | prueba: detalle.tiempoRestante}} </td>
           <!-- <td ColorTimer [tiempo]="detalle.tiempoRestante"> 
             <app-cronometro [tEspera]="detalle.tiempoRestante"></app-cronometro> 
           </td> -->
@@ -37,7 +41,7 @@
   
   </div>
 </div>
-</div>
+<!-- </div> -->
 <!-- 
 <h3>Calificanos</h3>
 <div class="row">
