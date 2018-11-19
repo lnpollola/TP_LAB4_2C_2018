@@ -94,6 +94,7 @@ import { BotonSuspenderComponent } from './boton-suspender/boton-suspender.compo
 import { BtnBorrarUsuarioComponent } from './btn-borrar-usuario/btn-borrar-usuario.component';
 import { EstadisticasComponent } from './estadisticas/estadisticas.component';
 import { ChartModule } from 'angular-highcharts';
+import { MapComponent } from './map/map.component';
 
 export function tokenGetter() {
   return JSON.parse(localStorage.getItem('token'));
@@ -126,7 +127,8 @@ export function tokenGetter() {
     UsuariosComponent,
     BotonSuspenderComponent,
     BtnBorrarUsuarioComponent,
-    EstadisticasComponent
+    EstadisticasComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
