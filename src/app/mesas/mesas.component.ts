@@ -17,7 +17,8 @@ export class MesasComponent implements OnInit {
 
   constructor(private httpMesa: MesasService, private auth: AuthService) {
 
-    // this.perfil=this.auth.GetPayLoad().perfil;
+    this.perfil=   JSON.parse(localStorage.getItem('usuario')).perfil;
+  
     this.TraerLasMesas();
    }
 
