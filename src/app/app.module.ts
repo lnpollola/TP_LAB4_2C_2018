@@ -99,6 +99,7 @@ import { ClienteComponent } from './cliente/cliente.component';
 import {CheckboxModule} from 'primeng/checkbox';
 import {SharedModule} from 'primeng/primeng';
 import { PruebaPipe } from './pipes/prueba.pipe';
+import { EncuestaComponent } from './encuesta/encuesta.component';
 
 export function tokenGetter() {
   return JSON.parse(localStorage.getItem('token'));
@@ -134,7 +135,8 @@ export function tokenGetter() {
     EstadisticasComponent,
     MapComponent,
     ClienteComponent,
-    PruebaPipe
+    PruebaPipe,
+    EncuestaComponent
   ],
   imports: [
     BrowserModule,

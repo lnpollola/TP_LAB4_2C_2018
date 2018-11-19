@@ -9,6 +9,7 @@
    <!-- PERFILES -->
    <a mat-button  *ngIf="IngresoBool && (perfilUsuario == 'admin')" routerLink="/usuarios" routerLinkActive="active" id="hbtn"><span class="fa fa-user fa-lg"></span> Administrador </a>
    <a mat-button  *ngIf="IngresoBool && (perfilUsuario == 'cliente')" routerLink="/cliente" routerLinkActive="active" id="hbtn"><span class="fa fa-search-plus fa-lg"></span> Ver estado Pedido</a>
+   <a mat-button  *ngIf="IngresoBool && (perfilUsuario == 'cliente')" routerLink="/encuesta" routerLinkActive="active" id="hbtn"><span class="fa fa-check-square-o fa-lg"></span> Completar encuesta</a>
     
     <a mat-button *ngIf="IngresoBool && perfilUsuario == 'mozo'" routerLink="/menu" routerLinkActive="active" id="hbtn"><span class="fa fa-cutlery fa-lg"></span> Menu</a>
     <a mat-button  *ngIf="IngresoBool && (perfilUsuario != 'mozo' && perfilUsuario != 'cliente')" routerLink="/listado" routerLinkActive="active" id="hbtn"><span class="fa fa-book fa-lg"></span> Listado pedidos</a>

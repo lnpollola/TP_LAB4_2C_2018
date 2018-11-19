@@ -11,6 +11,7 @@ import { MesasComponent } from '../mesas/mesas.component';
 import { UsuariosComponent } from '../usuarios/usuarios.component';
 import { EstadisticasComponent } from '../estadisticas/estadisticas.component';
 import { ClienteComponent } from '../cliente/cliente.component';
+import { EncuestaComponent } from '../encuesta/encuesta.component';
 
 export const routes: Routes =[
     {path:'home', component:HomeComponent},
@@ -23,6 +24,7 @@ export const routes: Routes =[
     {path:'usuarios', component:UsuariosComponent},
     {path:'estadisticas', component:EstadisticasComponent},
     {path:'cliente', component:ClienteComponent},
+    {path:'encuesta', component:EncuestaComponent},
     {path:'', redirectTo: '/home',pathMatch:'full'}
 ]
  	

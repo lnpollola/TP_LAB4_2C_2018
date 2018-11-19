@@ -2,14 +2,11 @@
 
 
 <div class="container">
-  
-    
     <div class="row">
 <div class="form-ingreso">
-        <h3>Ingrese pedido y mesa</h3>
+        <h3>Ingrese Nro de pedido </h3>
   <div class="form-goup">
   <input type="text" class="form-control" [(ngModel)]="idPedido" placeholder="Pedido" > <br>
-  <!-- <input type="text" class="form-control" [(ngModel)]="idMesa" placeholder="Mesa" ><br> -->
   <button class="btn btn-primary" (click)="TraerTiempo()" >Traer</button>
 </div>
 </div>
@@ -32,13 +29,9 @@
           <td> {{detalle.idDetalle}} </td>
           <td> {{detalle.producto}} </td>
           <td> {{detalle.tiempoRestante | prueba: detalle.tiempoRestante}} </td>
-          <!-- <td ColorTimer [tiempo]="detalle.tiempoRestante"> 
-            <app-cronometro [tEspera]="detalle.tiempoRestante"></app-cronometro> 
-          </td> -->
         </tr>
       </tbody>
     </table>
-  
   </div>
 </div>
 <!-- </div> -->
