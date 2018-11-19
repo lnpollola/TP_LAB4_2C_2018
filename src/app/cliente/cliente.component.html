@@ -1,0 +1,69 @@
+<app-header></app-header>
+
+
+<div class="container">
+  
+    
+    <div class="row">
+<div class="form-ingreso">
+        <h3>Ingrese pedido y mesa</h3>
+  <div class="form-goup">
+  <input type="text" class="form-control" [(ngModel)]="idPedido" placeholder="Pedido" > <br>
+  <input type="text" class="form-control" [(ngModel)]="idMesa" placeholder="Mesa" ><br>
+  <button class="btn btn-primary" (click)="TraerTiempo()" >Traer</button>
+</div>
+</div>
+<div class="row">
+  <div class="info-cliente col-sm-8">
+    <h1>
+      {{idPedido}}
+    </h1>
+    <table style="color: black" class="table">
+      <thead>
+        <th>idDetalle</th>
+        <th>Producto</th>
+        <th>Tiempo Restante</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let detalle of detalles">
+          <td> {{detalle.idDetalle}} </td>
+          <td> {{detalle.producto}} </td>
+          <!-- <td ColorTimer [tiempo]="detalle.tiempoRestante"> 
+            <app-cronometro [tEspera]="detalle.tiempoRestante"></app-cronometro> 
+          </td> -->
+        </tr>
+      </tbody>
+    </table>
+  
+  </div>
+</div>
+</div>
+<!-- 
+<h3>Calificanos</h3>
+<div class="row">
+<div style="color: black" class="encuensta form-goup">
+  <h4>¿Que te parecio?</h4>
+  <label >El mozo</label>
+  <p-rating [(ngModel)]="valMozo"></p-rating>
+
+  <label >El cocinero</label>
+  <p-rating [(ngModel)]="valCocinero"></p-rating>
+
+  <label >La mesa</label>
+  <p-rating [(ngModel)]="valMesa"></p-rating>
+
+  <label >El restaurant</label>
+  <p-rating [(ngModel)]="valRest"></p-rating> -->
+
+  
+<!-- 
+</div>
+<div class="inputEx col-sm-8">
+  <h4>Contanos tu experiencia</h4>
+  <textarea class="form-control"></textarea>
+  
+</div>
+
+</div>
+<button class="btn btn-primary" (click)="Presionar()" >Enviar</button>
+</div> -->

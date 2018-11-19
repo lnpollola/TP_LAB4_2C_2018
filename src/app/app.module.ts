@@ -95,6 +95,9 @@ import { BtnBorrarUsuarioComponent } from './btn-borrar-usuario/btn-borrar-usuar
 import { EstadisticasComponent } from './estadisticas/estadisticas.component';
 import { ChartModule } from 'angular-highcharts';
 import { MapComponent } from './map/map.component';
+import { ClienteComponent } from './cliente/cliente.component';
+import {CheckboxModule} from 'primeng/checkbox';
+import {SharedModule} from 'primeng/primeng';
 
 export function tokenGetter() {
   return JSON.parse(localStorage.getItem('token'));
@@ -128,7 +131,8 @@ export function tokenGetter() {
     BotonSuspenderComponent,
     BtnBorrarUsuarioComponent,
     EstadisticasComponent,
-    MapComponent
+    MapComponent,
+    ClienteComponent
   ],
   imports: [
     BrowserModule,
@@ -138,6 +142,7 @@ export function tokenGetter() {
     AppRoutingModule,
     FormsModule, 
     ReactiveFormsModule,
+    CheckboxModule,
     FileUploadModule,
     ChartModule,
     //material    
@@ -173,6 +178,7 @@ export function tokenGetter() {
     MatNativeDateModule,    
     HttpModule,
     DialogModule,
+    SharedModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,

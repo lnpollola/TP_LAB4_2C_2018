@@ -84,9 +84,15 @@ export class LoginComponent implements OnInit {
               this.router.navigate(['menu']); 
             }
             else
-            {
-              
-              this.router.navigate(['listado']); 
+            { 
+              if(this.respuesta.datos.perfil =='cliente')
+              {
+                this.router.navigate(['cliente']); 
+              }
+              else
+              { 
+                this.router.navigate(['listado']); 
+              }
             }
           }
          
@@ -105,6 +111,12 @@ export class LoginComponent implements OnInit {
   {
       this.loginForm.controls['username'].setValue('admin@gmail.com');
       this.loginForm.controls['password'].setValue('admin');
+  }
+
+  LoginCliente()
+  {
+      this.loginForm.controls['username'].setValue('cliente1@gmail.com');
+      this.loginForm.controls['password'].setValue('1234');
   }
 
   LoginMozo()
