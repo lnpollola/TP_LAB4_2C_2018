@@ -1,14 +1,20 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Feedback, ContactType } from '../shared/feedback';
+import {NgbRatingConfig} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-encuesta',
   templateUrl: './encuesta.component.html',
-  styleUrls: ['./encuesta.component.css']
+  styleUrls: ['./encuesta.component.css'],
+  providers: [NgbRatingConfig]
 })
 export class EncuestaComponent implements OnInit {
   
+  currentRateMesa = 0;
+  currentRateRest = 0;
+  currentRateMozo = 0;
+  currentRateCoci = 0;
 
   feedbackForm: FormGroup;
   feedback: Feedback;
@@ -42,8 +48,14 @@ export class EncuestaComponent implements OnInit {
     },
   };
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+          private fb: FormBuilder,
+          config: NgbRatingConfig
+            ) 
+    {
     this.createForm();
+    config.max = 5;
+    config.readonly = false;
    }
 
   ngOnInit() {

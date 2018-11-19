@@ -100,6 +100,8 @@ import {CheckboxModule} from 'primeng/checkbox';
 import {SharedModule} from 'primeng/primeng';
 import { PruebaPipe } from './pipes/prueba.pipe';
 import { EncuestaComponent } from './encuesta/encuesta.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbRatingConfig } from '@ng-bootstrap/ng-bootstrap';
 
 export function tokenGetter() {
   return JSON.parse(localStorage.getItem('token'));
@@ -144,6 +146,7 @@ export function tokenGetter() {
     FlexLayoutModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    NgbModule,
     FormsModule, 
     ReactiveFormsModule,
     CheckboxModule,
@@ -198,6 +201,7 @@ export function tokenGetter() {
     ProductosService, 
     PedidoService,
     AuthService, 
+    NgbRatingConfig,
     AuthGuardService, 
     JwtHelperService, 
     MessageService,
