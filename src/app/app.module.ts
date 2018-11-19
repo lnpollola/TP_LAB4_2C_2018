@@ -89,6 +89,9 @@ import {GrowlModule} from 'primeng/growl';
 import { PedidoService } from './services/pedido.service';
 import { MesasService } from './services/mesas.service';
 import {MessageService} from 'primeng/api';
+import { UsuariosComponent } from './usuarios/usuarios.component';
+import { BotonSuspenderComponent } from './boton-suspender/boton-suspender.component';
+import { BtnBorrarUsuarioComponent } from './btn-borrar-usuario/btn-borrar-usuario.component';
 
 export function tokenGetter() {
   return JSON.parse(localStorage.getItem('token'));
@@ -117,7 +120,10 @@ export function tokenGetter() {
     TablaPendientesComponent,
     BotonPrepararComponent,
     BotonServirComponent,
-    MesasComponent
+    MesasComponent,
+    UsuariosComponent,
+    BotonSuspenderComponent,
+    BtnBorrarUsuarioComponent
   ],
   imports: [
     BrowserModule,

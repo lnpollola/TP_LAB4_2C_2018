@@ -1,0 +1,57 @@
+<app-header></app-header>   
+
+
+<div class="row">
+    <div class="form-ingreso col-sm-3">
+        <h3>Nuevo empleado</h3>
+      <form [formGroup]="registroForm" >
+        <div class="form-group">
+          <input class="form-control input-ingreso" placeholder="Email" type="email" id="email"  name="email" [formControl]="email" required
+          pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" ><br>
+    
+          <input class="form-control input-ingreso" placeholder="Clave" type="password"  name="clave"  [formControl]="clave" required><br>
+    
+          <input type="text" class="form-control input-ingreso" placeholder="Perfil"  name="perfil"  [formControl]="perfil" required><br>
+    
+          <div class="form-group">
+            <legend>Sexo</legend>
+            <input  value="Hombre"  type="radio" id="sexoh"  name="sexo"  [formControl]="sexo" required > <label class="lbl-sexo" for="Sexoh">Hombre</label><br>
+            <input  value="Mujer"  type="radio" id="sexom"   name="sexo"  [formControl]="sexo" required > <label class="lbl-sexo" for="Sexom">Mujer</label>
+            </div>
+          
+          <!-- <app-mi-captcha (lanzador)="RecibirCaptcha($event)"></app-mi-captcha>  -->
+          <p-messages [(value)]="msgs"></p-messages>
+           
+    
+          <button (click)="IngresarUsuario()" class="btn btn-success col-sm-12" [disabled]="!registroForm.valid">Ingresar</button>
+        </div>
+    
+      </form>
+    
+    
+    </div>
+    
+    
+    
+    
+    <div class="tabla-negra col-sm-5">
+        <h3>Lista de empleados</h3>
+      <table class="table col-sm-12">
+        
+          <thead>
+            <th>Usuario</th> <th>Perfil</th> <th>Estado</th> <th>Accion</th>
+          </thead>
+          <tbody *ngIf="listaUsuarios">
+            <tr *ngFor="let usuario of listaUsuarios">
+                <td>{{usuario.usuario}}</td>
+                <td>{{usuario.perfil}}</td>
+                <td>{{usuario.estado}}</td>
+                <td><boton-suspender [id]="usuario.id" [estado]="usuario.estado" (lanzador)="TraerTodosLosUsuarios($event)"></boton-suspender></td>
+                <td> <app-btn-borrar-usuario [id]="usuario.id" (lanzador)="TraerTodosLosUsuarios($event)" ></app-btn-borrar-usuario> </td>
+                
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    
+    </div>

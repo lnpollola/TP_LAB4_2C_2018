@@ -22,8 +22,6 @@ export class PedidoService {
 
   TraerPedidosPorSector()
   {
-    
-
     return this.http.httpPost("Pedidos/PendientesEmpleado",{"token":JSON.parse(localStorage.getItem('token'))})
     .pipe((data)=>{return data})
   }

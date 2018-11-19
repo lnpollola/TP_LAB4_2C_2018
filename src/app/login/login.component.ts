@@ -75,7 +75,7 @@ export class LoginComponent implements OnInit {
           this.dialog.closeAll();
           if(this.respuesta.datos.perfil =='admin')
           {
-            this.router.navigate(['admin']); 
+            this.router.navigate(['usuarios']); 
           }
           else
           {
