@@ -30,12 +30,12 @@ export const LEADERS: Leader[] = [
       },
       {
         id: 3,
-        name: 'Alberto Somayya',
+        name: 'Cocina y Postres',
         image: '/assets/images/alberto.png',
         designation: 'Executive Chef',
         abbr: 'EC',
         featured: true,
-        description: 'Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences. He says, Put together the cuisines from the two craziest cultures, and you get a winning hit! Amma Mia!'
+        description: 'Cocina internacional y nacional, lo mejor de todo el mundo servido en tu mesa. Pruebe nuestros postres úncicos con sabores que harán explotar su paladar como nunca antes.'
       }   
     ];       
      

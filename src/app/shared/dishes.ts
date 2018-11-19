@@ -3,13 +3,13 @@ import { Dish } from './dish';
 export const DISHES: Dish[] = [
     {
         id: 0,
-        name: 'Uthappizza',
+        name: 'Barra de Tragos y Vinos',
         image: '/assets/images/uthappizza.png',
         category: 'mains',
         label: 'Hot',
         price: '4.99',
         featured: true,
-        description: 'A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.',
+        description: 'Tragos únicos creados por los mejores Barman de Argentina. Visite nuestra bodega y conozca la amplia variedad de vinos y varietales con los que contamos.',
         comments: [
             {
                 rating: 5,
@@ -45,7 +45,7 @@ export const DISHES: Dish[] = [
     },
     {
         id: 1,
-        name: 'Zucchipakoda',
+        name: 'Chopera Artesanal',
         image: '/assets/images/zucchipakoda.png',
         category: 'appetizer',
         label: '',
