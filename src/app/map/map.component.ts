@@ -41,8 +41,8 @@ export class MapComponent implements OnInit {
         })
       ],
       view: new ol.View({
-        center: ol.proj.fromLonLat([-58.3669122,-34.6623006]),
-        zoom: 16
+        center: ol.proj.fromLonLat([-58.36491644382476,-34.66246678197339]),
+        zoom: 18
       })
     });
 
