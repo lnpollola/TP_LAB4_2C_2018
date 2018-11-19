@@ -92,6 +92,7 @@ import {MessageService} from 'primeng/api';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { BotonSuspenderComponent } from './boton-suspender/boton-suspender.component';
 import { BtnBorrarUsuarioComponent } from './btn-borrar-usuario/btn-borrar-usuario.component';
+import { EstadisticasComponent } from './estadisticas/estadisticas.component';
 
 export function tokenGetter() {
   return JSON.parse(localStorage.getItem('token'));
@@ -123,7 +124,8 @@ export function tokenGetter() {
     MesasComponent,
     UsuariosComponent,
     BotonSuspenderComponent,
-    BtnBorrarUsuarioComponent
+    BtnBorrarUsuarioComponent,
+    EstadisticasComponent
   ],
   imports: [
     BrowserModule,

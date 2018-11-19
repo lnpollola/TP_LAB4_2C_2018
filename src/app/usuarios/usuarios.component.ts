@@ -62,8 +62,8 @@ captcha=false;
 
    IngresarUsuario()
    {
-     if(this.captcha)
-     {
+    //  if(this.captcha)
+    //  {
 
       let usuario= this.registroForm.get('email').value;
       let clave= this.registroForm.get('clave').value;
@@ -78,13 +78,13 @@ captcha=false;
        ;
       
 
-     }
-     else{
+    //  }
+    //  else{
        
     //  this.msjServ.add({severity: 'error', summary: 'Falta captcha', detail: ' este es el detalle'});
-    this.msgs.push({severity:'error', summary:'Error', detail:'Falta validar el captcha'});
+    // this.msgs.push({severity:'error', summary:'Error', detail:'Falta validar el captcha'});
       
-     }
+    //  }
 
     
    }

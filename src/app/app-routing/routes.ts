@@ -9,6 +9,7 @@ import { LoginComponent } from '../login/login.component';
 import { TablaPendientesComponent } from '../tabla-pendientes/tabla-pendientes.component';
 import { MesasComponent } from '../mesas/mesas.component';
 import { UsuariosComponent } from '../usuarios/usuarios.component'
+import { EstadisticasComponent } from '../estadisticas/estadisticas.component'
 
 export const routes: Routes =[
     {path:'home', component:HomeComponent},
@@ -19,6 +20,7 @@ export const routes: Routes =[
     {path:'listado', component:TablaPendientesComponent},
     {path:'listadoMesas', component:MesasComponent},
     {path:'usuarios', component:UsuariosComponent},
+    {path:'estadisticas', component:EstadisticasComponent},
     {path:'', redirectTo: '/home',pathMatch:'full'}
 ]
  	
