@@ -93,6 +93,7 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
 import { BotonSuspenderComponent } from './boton-suspender/boton-suspender.component';
 import { BtnBorrarUsuarioComponent } from './btn-borrar-usuario/btn-borrar-usuario.component';
 import { EstadisticasComponent } from './estadisticas/estadisticas.component';
+import { ChartModule } from 'angular-highcharts';
 
 export function tokenGetter() {
   return JSON.parse(localStorage.getItem('token'));
@@ -136,6 +137,7 @@ export function tokenGetter() {
     FormsModule, 
     ReactiveFormsModule,
     FileUploadModule,
+    ChartModule,
     //material    
     MatFormFieldModule,    
     MatAutocompleteModule,
