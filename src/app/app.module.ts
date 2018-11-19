@@ -27,6 +27,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {FileUploadModule} from 'primeng/fileupload';
 
+import { DialogModule} from 'primeng/dialog';
+
 import {
   MatFormFieldModule,
   MatAutocompleteModule,
@@ -70,8 +72,27 @@ import { BotonBorrarComponent } from './boton-borrar/boton-borrar.component';
 import { TablaPendientesComponent } from './tabla-pendientes/tabla-pendientes.component';
 import { BotonPrepararComponent } from './boton-preparar/boton-preparar.component';
 import { BotonServirComponent } from './boton-servir/boton-servir.component';
+import { MesasComponent } from './mesas/mesas.component';
+import { GenericoService } from './services/generico.service';
+import { UsuariosService } from './services/usuarios.service';
+import { ProductosService } from './services/productos.service';
+import { AuthService } from './services/auth/auth.service';
+import { AuthGuardService } from './services/auth/auth-guard.service';
 
+import { JwtHelperService, JwtModule } from '@auth0/angular-jwt';
+// import { RoleGuardService } from './services/auth/role-guard-service.service';
 
+import {ToastModule} from 'primeng/toast';
+import {MessagesModule} from 'primeng/messages';
+import {MessageModule} from 'primeng/message';
+import {GrowlModule} from 'primeng/growl';
+import { PedidoService } from './services/pedido.service';
+import { MesasService } from './services/mesas.service';
+import {MessageService} from 'primeng/api';
+
+export function tokenGetter() {
+  return JSON.parse(localStorage.getItem('token'));
+}
 
 
 @NgModule({
@@ -86,6 +107,7 @@ import { BotonServirComponent } from './boton-servir/boton-servir.component';
     ContactComponent,
     LoginComponent,
     FiltroPipe,
+    FondoDirective,
     ColorTimerDirective,
     EstadoPedidoDirective,
     FondoDirective,
@@ -94,7 +116,8 @@ import { BotonServirComponent } from './boton-servir/boton-servir.component';
     BotonBorrarComponent,
     TablaPendientesComponent,
     BotonPrepararComponent,
-    BotonServirComponent
+    BotonServirComponent,
+    MesasComponent
   ],
   imports: [
     BrowserModule,
@@ -137,9 +160,28 @@ import { BotonServirComponent } from './boton-servir/boton-servir.component';
     MatTooltipModule,
     MatNativeDateModule,    
     HttpModule,
+    DialogModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        whitelistedDomains: ['localhost:3001'],
+        blacklistedRoutes: ['localhost:3001/auth/']
+      }
+    })
   ],
   providers: [DishService,
-  PromotionService, LeaderService],
+  PromotionService, LeaderService,
+  GenericoService, 
+    UsuariosService, 
+    ProductosService, 
+    PedidoService,
+    AuthService, 
+    AuthGuardService, 
+    JwtHelperService, 
+    MessageService,
+    MesasService
+    // RoleGuardService
+  ],
   entryComponents:[
     LoginComponent
   ],

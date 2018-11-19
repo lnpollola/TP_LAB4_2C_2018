@@ -1,0 +1,28 @@
+<app-header></app-header>
+<div class="container">
+    <div class="row">
+  
+      <table class="table" style="color: black">
+        <thead>
+          <th>idMesa</th>
+          <th>Estado</th>
+          <th>Accion</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let mesa of listaMesas">
+            <td> {{mesa.idMesa}} </td>
+            <td> {{mesa.estado}} </td>
+            <td *ngIf="perfil=='admin'"> <button class="btn btn-primary" (click)="Cerrar(mesa.idMesa)">Cerrar</button></td>
+            <td *ngIf="perfil=='admin'"><button class="btn btn-success" (click)="Cobrar(mesa.idMesa)" >Cobrar</button> </td>
+            <td><button class="btn btn-warning" (click)="ServirMesa(mesa.idMesa)" >Servir Mesa</button> </td>
+          </tr>
+        </tbody>
+      </table>
+  
+      <p-dialog header="Cobrar Mesa" [(visible)]="display">
+          <h1>Total: {{importe}}</h1>
+      </p-dialog>
+  
+    </div>
+  
+  </div>
