@@ -73,7 +73,23 @@ export class LoginComponent implements OnInit {
           
           localStorage.setItem('token', JSON.stringify(this.respuesta.token) );
           this.dialog.closeAll();
-          this.router.navigate(['home']); 
+          if(this.respuesta.datos.perfil =='admin')
+          {
+            this.router.navigate(['admin']); 
+          }
+          else
+          {
+            if(this.respuesta.datos.perfil =='mozo')
+            {
+              this.router.navigate(['menu']); 
+            }
+            else
+            {
+              
+              this.router.navigate(['listado']); 
+            }
+          }
+         
         }
         else{
           alert("error");
