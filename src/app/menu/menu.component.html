@@ -73,7 +73,7 @@
           </ul>
           <legend>Total:</legend>
           <h4 *ngIf="elPedido.id"> {{totalPedido | currency: '$ ': true: '1.1-2'}} </h4>
-          <!-- <div><app-csv *ngIf="elPedido.id" [pedido]="elPedido"></app-csv></div> -->
+          <div><app-csv *ngIf="elPedido.id" [pedido]="elPedido"></app-csv></div>
 
         </div>
 

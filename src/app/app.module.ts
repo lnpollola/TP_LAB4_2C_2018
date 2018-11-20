@@ -102,6 +102,9 @@ import { PruebaPipe } from './pipes/prueba.pipe';
 import { EncuestaComponent } from './encuesta/encuesta.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { NgbRatingConfig } from '@ng-bootstrap/ng-bootstrap';
+import { Angular2CsvModule } from 'angular2-csv';
+import { CsvComponent } from './csv/csv.component';
+
 
 export function tokenGetter() {
   return JSON.parse(localStorage.getItem('token'));
@@ -138,7 +141,8 @@ export function tokenGetter() {
     MapComponent,
     ClienteComponent,
     PruebaPipe,
-    EncuestaComponent
+    EncuestaComponent,
+    CsvComponent
   ],
   imports: [
     BrowserModule,
@@ -148,6 +152,7 @@ export function tokenGetter() {
     AppRoutingModule,
     NgbModule,
     FormsModule, 
+    Angular2CsvModule,
     ReactiveFormsModule,
     CheckboxModule,
     FileUploadModule,
