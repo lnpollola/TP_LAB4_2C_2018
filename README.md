@@ -26,29 +26,34 @@ Correr `ng serve` para levantar Angular, navegar hacia `http://localhost:4200/`.
 ## Screenshots:
 
 ## - Home
-(https://github.com/lnpollola/TP_LAB4_2C_2018/tree/master/Screenshots/Home.png)
+![alt text](Screenshots/Home.png)
 
 ## - Login 
-[alt text](https://github.com/lnpollola/TP_LAB4_2C_2018/tree/master/Screenshots/Login.JPG)
+![alt text](Screenshots/Login.png)
 
 ## - Contact
-![alt text](https://github.com/lnpollola/TP_LAB4_2C_2018/tree/master/Screenshots/Contact.JPG)
+![alt text](Screenshots/Contact.JPG)
 
 ## - Cliente
-![alt text](https://github.com/lnpollola/TP_LAB4_2C_2018/tree/master/Screenshots/Menu_Feedback.png)
+![alt text](Screenshots/Cliente1.png)
+![alt text](Screenshots/Cliente2.png)
 
 ## - Socio 
-![alt text](https://github.com/lnpollola/TP_LAB4_2C_2018/tree/master/Screenshots/Menu.png)
+![alt text](Screenshots/Socio1.png)
+![alt text](Screenshots/Socio2.png)
+![alt text](Screenshots/Socio3.png)
+![alt text](Screenshots/Socio4.png)
 
 ## - Mozo 
-![alt text](https://github.com/lnpollola/TP_LAB4_2C_2018/tree/master/Screenshots/Menu.png)
+![alt text](Screenshots/Mozo1.png)
+![alt text](Screenshots/Mozo2.png)
 
 ## - Chopera 
-![alt text](https://github.com/lnpollola/TP_LAB4_2C_2018/tree/master/Screenshots/Menu.png)
+![alt text](Screenshots/Chopera.png)
 
 ## - Vinos&Tragos 
-![alt text](https://github.com/lnpollola/TP_LAB4_2C_2018/tree/master/Screenshots/Menu.png)
+![alt text](Screenshots/VinosTragos.png)
 
 ## - CandyBar 
-![alt text](https://github.com/lnpollola/TP_LAB4_2C_2018/tree/master/Screenshots/Menu.png)
+![alt text](/Screenshots/CandyBar.png)
 
