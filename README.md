@@ -1,33 +1,54 @@
-# Pizza-Restaurant-WebPage
+# The Red Door
+Aplicación de restaurante, con ABM de empleados, pedidos y sistema de comanda para varios perfiles.
 
-This is a front end web app. This is made for consumers. It provides a platform for consumers where they can know about offers on pizza, varieties of pizza and quality of pizza and give feedback to us of that particular pizza.They can also reserve their seat online.
 
-## Technology used:
+## Tecnologías utilizadas:
 - Angular 6
 - Angular Material
 - Bootstrap
 - HTML5
 - CSS3
+- PHP 
+- MYSQL
 
-## Development server
+## Ejecución
+Perfiles:
+-Socio
+-Cliente
+-Mozo
+-Chopera
+-Tragos&Vinos
+-CandyBar
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Ejecución
+Correr `ng serve` para levantar Angular, navegar hacia `http://localhost:4200/`.
 
 ## Screenshots:
 
-## - Home page
-![alt text](https://github.com/AnilSharma1997/Pizza-Restaurant-WebPage-in-Angular6/blob/master/Screenshots/Home.png)
+## - Home
+![alt text](https://github.com/lnpollola/TP_LAB4_2C_2018/tree/master/Screenshots/Home.png)
 
-## - Menu Details
-![alt text](https://github.com/AnilSharma1997/Pizza-Restaurant-WebPage-in-Angular6/blob/master/Screenshots/Menu.png)
+## - Login 
+![alt text](https://github.com/lnpollola/TP_LAB4_2C_2018/tree/master/Screenshots/Login.JPG)
 
-## - Dish Details and Feedback
-![alt text](https://github.com/AnilSharma1997/Pizza-Restaurant-WebPage-in-Angular6/blob/master/Screenshots/Menu_Feedback.png)
+## - Contact
+![alt text](https://github.com/lnpollola/TP_LAB4_2C_2018/tree/master/Screenshots/Contact.JPG)
 
-## - Login and Reserve Table
-![alt text](https://github.com/AnilSharma1997/Pizza-Restaurant-WebPage-in-Angular6/blob/master/Screenshots/Login.JPG)
-![alt text](https://github.com/AnilSharma1997/Pizza-Restaurant-WebPage-in-Angular6/blob/master/Screenshots/Reserve_Table.JPG)
+## - Cliente
+![alt text](https://github.com/lnpollola/TP_LAB4_2C_2018/tree/master/Screenshots/Menu_Feedback.png)
 
-## Further help
+## - Socio 
+![alt text](https://github.com/lnpollola/TP_LAB4_2C_2018/tree/master/Screenshots/Menu.png)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## - Mozo 
+![alt text](https://github.com/lnpollola/TP_LAB4_2C_2018/tree/master/Screenshots/Menu.png)
+
+## - Chopera 
+![alt text](https://github.com/lnpollola/TP_LAB4_2C_2018/tree/master/Screenshots/Menu.png)
+
+## - Vinos&Tragos 
+![alt text](https://github.com/lnpollola/TP_LAB4_2C_2018/tree/master/Screenshots/Menu.png)
+
+## - CandyBar 
+![alt text](https://github.com/lnpollola/TP_LAB4_2C_2018/tree/master/Screenshots/Menu.png)
+

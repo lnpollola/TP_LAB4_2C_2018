@@ -15,8 +15,11 @@
     
           <div class="form-group">
             <legend>Sexo</legend>
-            <input  value="Hombre"  type="radio" id="sexoh"  name="sexo"  [formControl]="sexo" required > <label class="lbl-sexo" for="Sexoh">Hombre</label><br>
-            <input  value="Mujer"  type="radio" id="sexom"   name="sexo"  [formControl]="sexo" required > <label class="lbl-sexo" for="Sexom">Mujer</label>
+
+        
+
+            <input  value="Hombre"  type="radio" id="sexoh"  name="sexo"  [formControl]="sexo" required > <label class="lbl-sexo" for="Sexoh"> Hombre</label><br>
+            <input  value="Mujer"  type="radio" id="sexom"   name="sexo"  [formControl]="sexo" required > <label class="lbl-sexo" for="Sexom"> Mujer</label>
             </div>
             <button (click)="IngresarUsuario()" class="btn btn-success col-sm-12" [disabled]="!registroForm.valid">Ingresar</button>
   <br><br>
