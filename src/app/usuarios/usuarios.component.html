@@ -18,15 +18,16 @@
             <input  value="Hombre"  type="radio" id="sexoh"  name="sexo"  [formControl]="sexo" required > <label class="lbl-sexo" for="Sexoh">Hombre</label><br>
             <input  value="Mujer"  type="radio" id="sexom"   name="sexo"  [formControl]="sexo" required > <label class="lbl-sexo" for="Sexom">Mujer</label>
             </div>
-          
-          <!-- <app-mi-captcha (lanzador)="RecibirCaptcha($event)"></app-mi-captcha>  -->
+            <button (click)="IngresarUsuario()" class="btn btn-success col-sm-12" [disabled]="!registroForm.valid">Ingresar</button>
+  
+          <app-captcha-propio (lanzador)="RecibirCaptcha($event)"></app-captcha-propio> 
           <p-messages [(value)]="msgs"></p-messages>
            
     
-          <button (click)="IngresarUsuario()" class="btn btn-success col-sm-12" [disabled]="!registroForm.valid">Ingresar</button>
-        </div>
+             </div>
     
       </form>
+    
     </div>
     
     <div class="tabla-negra col-sm-5">

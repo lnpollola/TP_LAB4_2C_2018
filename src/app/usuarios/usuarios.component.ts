@@ -62,31 +62,35 @@ captcha=false;
 
    IngresarUsuario()
    {
-    //  if(this.captcha)
-    //  {
-
-      let usuario= this.registroForm.get('email').value;
-      let clave= this.registroForm.get('clave').value;
-      let perfil= this.registroForm.get('perfil').value;
-      let sexo= this.registroForm.get('sexo').value;
+ 
+       if(this.captcha)
+       {
   
-       this.httpUsuarios.CargarUsuario(usuario, clave, sexo, perfil)
-       .subscribe((data)=>{
-         console.log(data);
-         this.TraerTodosLosUsuarios();
-       })
-       ;
-      
-
-    //  }
-    //  else{
-       
-    //  this.msjServ.add({severity: 'error', summary: 'Falta captcha', detail: ' este es el detalle'});
-    // this.msgs.push({severity:'error', summary:'Error', detail:'Falta validar el captcha'});
-      
-    //  }
-
+        let usuario= this.registroForm.get('email').value;
+        let clave= this.registroForm.get('clave').value;
+        let perfil= this.registroForm.get('perfil').value;
+        let sexo= this.registroForm.get('sexo').value;
     
+      
+        this.httpUsuarios.CargarUsuario(usuario, clave, sexo, perfil)
+        .subscribe((data)=>{
+          console.log(data);
+          this.TraerTodosLosUsuarios();
+        })
+        ;
+        
+  
+       }
+       else{
+         
+      //  this.msjServ.add({severity: 'error', summary: 'Falta captcha', detail: ' este es el detalle'});
+      this.msgs.push({severity:'error', summary:'Error', detail:'Falta validar el captcha'});
+        
+       }
+
+       
+
+       
    }
 
    

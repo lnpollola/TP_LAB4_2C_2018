@@ -1,0 +1,15 @@
+<div class=" captcha justify-content-center">
+  <p>Ingrese el color {{colorPedido}}</p>
+  <div *ngIf="spinner" class="spinner">
+      <img src="./assets/imagenes/spinner.gif" style="height: 150px; width: 150px" alt="">
+    </div> 
+    
+  <div *ngIf="!spinner && !respuesta" class="row colores">
+    <div class="rojo" (click)="Ingresar('rojo')"></div>
+    <div class="verde" (click)= "Ingresar('verde')"></div>
+    <div class="azul" (click)= "Ingresar('azul')"></div>
+  </div>
+
+  <legend *ngIf="respuesta">No soy un robot</legend>
+
+</div>

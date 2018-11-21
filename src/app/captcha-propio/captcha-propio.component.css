@@ -1,0 +1,29 @@
+.captcha{
+    height: 60px;
+    width: 150px;
+}
+
+.rojo
+{
+    background-color: red;
+    height: 50px;
+    width: 50px;
+}
+
+.verde
+{
+    background-color: green;
+    height: 50px;
+    width: 50px;
+}
+
+.azul
+{
+    background-color: blue;
+    height: 50px;
+    width: 50px;
+}
+.row {
+    margin-right: 15px;
+    margin-left: 15px;
+}

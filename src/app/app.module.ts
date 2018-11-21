@@ -78,6 +78,7 @@ import { UsuariosService } from './services/usuarios.service';
 import { ProductosService } from './services/productos.service';
 import { AuthService } from './services/auth/auth.service';
 import { AuthGuardService } from './services/auth/auth-guard.service';
+import { CaptchaService } from './services/captcha.service';
 
 import { JwtHelperService, JwtModule } from '@auth0/angular-jwt';
 // import { RoleGuardService } from './services/auth/role-guard-service.service';
@@ -104,7 +105,9 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { NgbRatingConfig } from '@ng-bootstrap/ng-bootstrap';
 import { Angular2CsvModule } from 'angular2-csv';
 import { CsvComponent } from './csv/csv.component';
-
+import { AngularFileUploaderModule } from "angular-file-uploader";
+import { CaptchaPropioComponent } from './captcha-propio/captcha-propio.component';
+ 
 
 export function tokenGetter() {
   return JSON.parse(localStorage.getItem('token'));
@@ -142,7 +145,8 @@ export function tokenGetter() {
     ClienteComponent,
     PruebaPipe,
     EncuestaComponent,
-    CsvComponent
+    CsvComponent,
+    CaptchaPropioComponent
   ],
   imports: [
     BrowserModule,
@@ -191,6 +195,7 @@ export function tokenGetter() {
     HttpModule,
     DialogModule,
     SharedModule,
+    AngularFileUploaderModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
@@ -204,6 +209,7 @@ export function tokenGetter() {
   GenericoService, 
     UsuariosService, 
     ProductosService, 
+    CaptchaService,
     PedidoService,
     AuthService, 
     NgbRatingConfig,

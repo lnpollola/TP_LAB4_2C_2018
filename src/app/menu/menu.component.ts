@@ -1,7 +1,3 @@
-// import { Component, OnInit } from '@angular/core';
-// import {Dish} from '../shared/dish';
-// import {DishService} from '../services/dish.service';
-
 import { Component, OnInit } from '@angular/core';
 import { Producto } from '../clases/producto';
 import { ProductosService } from '../services/productos.service';
@@ -18,8 +14,7 @@ import { Pedido } from '../clases/pedido';
 })
 
 export class MenuComponent implements OnInit {
-  // dishes : Dish[ ];
-  // selectedDish: Dish;
+
 
   listaProductos:Array<Producto>;
   productosPedido:Array<Producto>;
@@ -27,6 +22,7 @@ export class MenuComponent implements OnInit {
   mesa:number;
   elPedido:Pedido;
   busqueda:string;
+
 
   // constructor(private dishServices:DishService) { }
   constructor(
