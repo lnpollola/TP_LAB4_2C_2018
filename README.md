@@ -32,7 +32,7 @@ Correr `ng serve` para levantar Angular, navegar hacia `http://localhost:4200/`.
 ![alt text](Screenshots/Login.png)
 
 ## - Contact
-![alt text](Screenshots/Contact.JPG)
+![alt text](Screenshots/Contact.png)
 
 ## - Cliente
 ![alt text](Screenshots/Cliente1.png)
