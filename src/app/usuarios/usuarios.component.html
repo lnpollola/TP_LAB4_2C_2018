@@ -57,14 +57,14 @@
 
             <!-- Weight Column -->
             <ng-container matColumnDef="accionesSusp">
-                <th mat-header-cell *matHeaderCellDef> SUSPENDER </th>
+                <th mat-header-cell *matHeaderCellDef> SUSP </th>
                 <td mat-cell *matCellDef="let element"> 
                 <boton-suspender [id]="element.id" [estado]="element.estado" (lanzador)="TraerTodosLosUsuarios($event)"></boton-suspender>
                 </td>
               </ng-container>
 
               <ng-container matColumnDef="accionesDel">
-                  <th mat-header-cell *matHeaderCellDef> BORRAR </th>
+                  <th mat-header-cell *matHeaderCellDef> DEL </th>
                   <td mat-cell *matCellDef="let element"> 
                   <app-btn-borrar-usuario [id]="element.id" (lanzador)="TraerTodosLosUsuarios($event)" style="align-content: center; text-align: center;" ></app-btn-borrar-usuario> 
                   </td>

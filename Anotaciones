@@ -42,7 +42,8 @@ PENDIENTES:
     --FONDOS
     --LETRAS
     tablas
-
+        mesas 
+        
 --    INGRESO EMPLEADO
     INGRESO MENU
     --INGRESO CLIENTE

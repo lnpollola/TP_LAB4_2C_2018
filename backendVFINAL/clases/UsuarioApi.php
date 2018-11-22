@@ -40,7 +40,7 @@ class UsuarioApi extends Usuario implements IApiUsable
         $clave= $ArrayDeParametros['clave'];
         $perfil= $ArrayDeParametros['perfil'];
         $sexo= $ArrayDeParametros['sexo'];
-        $estado= "Activo";
+        $estado= "activo";
        
 
         $miUsuario= new Usuario();

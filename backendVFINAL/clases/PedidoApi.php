@@ -114,7 +114,7 @@ public static function TiempoRestante($request, $response, $args)
 {
     $respuesta=new stdclass();
     $ArrayDeParametros = $request->getParsedBody();
-    $idMesa=$ArrayDeParametros['idMesa'];
+    // $idMesa=$ArrayDeParametros['idMesa'];
     $idPedido=$ArrayDeParametros['idPedido'];
     $detalles=Detalle::TraerDetalleDelPedido($idPedido);
 
