@@ -54,6 +54,9 @@ Correr `ng serve` para levantar Angular, navegar hacia `http://localhost:4200/`.
 ## - Vinos&Tragos 
 ![alt text](Screenshots/VinosTragos.png)
 
+## - Vinos&Tragos 
+![alt text](Screenshots/Cocina.png)
+
 ## - CandyBar 
 ![alt text](/Screenshots/CandyBar.png)
 
