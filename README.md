@@ -11,8 +11,8 @@ Aplicación de restaurante, con ABM de empleados, pedidos y sistema de comanda p
 - PHP 
 - MYSQL
 
-## Ejecución
-Perfiles:
+## Perfiles de la aplicación
+
 -Socio
 -Cliente
 -Mozo

@@ -107,6 +107,9 @@ import { Angular2CsvModule } from 'angular2-csv';
 import { CsvComponent } from './csv/csv.component';
 import { AngularFileUploaderModule } from "angular-file-uploader";
 import { CaptchaPropioComponent } from './captcha-propio/captcha-propio.component';
+import { CambioDolarPipe } from './pipes/cambio-dolar.pipe';
+import { AgregoTextoPosPipe } from './pipes/agrego-texto-pos.pipe';
+import { EliminoMailPipe } from './pipes/elimino-mail.pipe';
  
 
 export function tokenGetter() {
@@ -146,7 +149,10 @@ export function tokenGetter() {
     PruebaPipe,
     EncuestaComponent,
     CsvComponent,
-    CaptchaPropioComponent
+    CaptchaPropioComponent,
+    CambioDolarPipe,
+    AgregoTextoPosPipe,
+    EliminoMailPipe
   ],
   imports: [
     BrowserModule,

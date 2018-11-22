@@ -27,21 +27,22 @@
               <mat-card>
                 <mat-card-header>
                   <mat-card-title>
-                  <h2>      Algunos datos</h2>
+                  <h2 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; text-align: left;">Algunos datos</h2>
                   </mat-card-title>
                 </mat-card-header>
                 <mat-card-content>
-                        <dl>
-                            <dt> Comienzo</dt>
+                  <br>      
+                  <dl>
+                            <dt> Comienzo <span class="fa fa-calendar fa-lg"></span> </dt>
                             <dd> 10 de Noviembre de 2018</dd>
                             <br>
-                            <dt> Socio Principal</dt>
+                            <dt> Socio Principal <span class="fa fa-users fa-lg"></span></dt>
                             <dd> Leandro Pollola</dd>
                             <br>
-                            <dt> Ganancias</dt>
-                            <dd> $1,250,375</dd>
+                            <dt> Ganancias <span class="fa fa-cutlery fa-money"></span></dt>
+                            <dd> {{Ganancias | cambioDolar: '27.5' | currency : 'USD' : 'symbol' : '1.0' | agregoTextoPos: 'USD' }}  </dd>
                             <br>
-                            <dt> Cantidad de Empleados</dt>
+                            <dt> Cantidad de Empleados <span class="fa fa-user-circle-o fa-lg"></span></dt>
                             <dd> 40</dd>
                        </dl>
                 </mat-card-content>
