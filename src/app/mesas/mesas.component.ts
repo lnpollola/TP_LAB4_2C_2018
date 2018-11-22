@@ -2,6 +2,11 @@ import { Component, OnInit, Input } from '@angular/core';
 import { MesasService } from '../services/mesas.service';
 import { AuthService } from '../services/auth/auth.service';
 
+export interface DetalleMesas {
+  nroMesa: string;
+  estado: string;
+  acciones: string;
+}
 
 @Component({
   selector: 'app-mesas',
@@ -14,6 +19,9 @@ export class MesasComponent implements OnInit {
   importe;
   display: boolean = false;
   perfil;
+
+  displayedColumns: string[] = ['nroMesa', 'estado', 'acciones'];
+
 
   constructor(private httpMesa: MesasService, private auth: AuthService) {
 

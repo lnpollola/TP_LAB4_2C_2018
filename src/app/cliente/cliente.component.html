@@ -18,6 +18,7 @@
     <h1 *ngIf="idPedido" style="color:whitesmoke; 	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
       Pedido seleccionado: {{idPedido}}
     </h1>
+    
        <table *ngIf="detalles" mat-table [dataSource]="detalles" class="lessons-table mat-elevation-z8" style="align-content: center;">
      
             <!-- Position Column -->

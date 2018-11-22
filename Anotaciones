@@ -38,12 +38,14 @@ PENDIENTES:
 --    README
 --    CAMBIAR FUENTE 
 
+
+
 --ESTILOS
     --FONDOS
     --LETRAS
-    tablas
-        mesas 
-        
+  --  tablas
+--        mesas 
+
 --    INGRESO EMPLEADO
     INGRESO MENU
     --INGRESO CLIENTE
