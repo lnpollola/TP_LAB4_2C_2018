@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { PedidoService } from '../services/pedido.service';
 
+export interface DetallePedido {
+  nroPedido: string;
+  producto: string;
+  tiempoRestante: string;
+}
+
 @Component({
   selector: 'app-cliente',
   templateUrl: './cliente.component.html',
@@ -15,6 +21,9 @@ valMozo:number;
 valCocinero:number;
 valMesa:number;
 valRest:number;
+
+displayedColumns: string[] = ['nroPedido', 'producto', 'tiempoRestante'];
+
 
   constructor(private httpPedido: PedidoService) { }
 
