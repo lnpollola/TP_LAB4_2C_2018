@@ -8,7 +8,7 @@ class AccesoDatos
     {
         try { 
             // $this->objetoPDO = new PDO('mysql:host=localhost;dbname=lacomanda;charset=utf8', 'id7726691_amorelli', 'osakpa1986', array(PDO::ATTR_EMULATE_PREPARES => false,PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-            $this->objetoPDO = new PDO('mysql:host=localhost;dbname=lacomandaV2;charset=utf8', 'root', '', array(PDO::ATTR_EMULATE_PREPARES => false,PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+            $this->objetoPDO = new PDO('mysql:host=localhost;dbname=id7803312_lacomanda;charset=utf8', 'id7803312_admin', 'admin', array(PDO::ATTR_EMULATE_PREPARES => false,PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
   
             $this->objetoPDO->exec("SET CHARACTER SET utf8");
             } 

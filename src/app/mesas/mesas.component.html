@@ -27,7 +27,7 @@
             <div class="divider"></div>
             <button *ngIf="perfil=='admin'" class="btn btn-success" (click)="Cobrar(element.idMesa)" >Cobrar</button> 
             <div class="divider"></div>
-              <button *ngIf="perfil=='mozo'" class="btn btn-warning" (click)="ServirMesa(mesa.idMesa)" >Servir Mesa</button> 
+              <button *ngIf="perfil=='mozo'" class="btn btn-warning" (click)="ServirMesa(element.idMesa)" >Servir Mesa</button> 
               <div class="divider"></div>
           </td>
           </ng-container>
