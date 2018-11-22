@@ -30,17 +30,20 @@ PENDIENTES:
 -    -REGISTRO
     
 8/11:
--    -GENERAR EXCEL O PDF --> Hacerlo en las tablas!
+++    -GENERAR EXCEL O PDF --> Hacerlo en las tablas!
 
 15/11:
 --    -MANEJO DE IMAGENES
 --   -CAPTCHA GOOGLE Y PROPIO
 --    README
-+    CAMBIAR FUENTE 
+--    CAMBIAR FUENTE 
 
-ESTILOS
-    FONDOS
-    LETRAS
+--ESTILOS
+    --FONDOS
+    --LETRAS
+    tablas
+    INGRESO EMPLEADO
+    INGRESO MENU
 subirlo
 spinner propio 
 

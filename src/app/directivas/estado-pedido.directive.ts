@@ -9,11 +9,22 @@ export class EstadoPedidoDirective {
   constructor(private element : ElementRef, private renderer : Renderer) { }
   ngOnInit()
   {
-    if(this.estado=="en preparacion") {
-      this.renderer.setElementStyle( this.element.nativeElement, "color", "green");
-       
-    
-  
+    switch(this.estado)
+    {
+      
+      case "pendiente": 
+      this.renderer.setElementStyle( this.element.nativeElement, "color", "maroon");
+      break;
+      
+      case "en preparacion": 
+      this.renderer.setElementStyle( this.element.nativeElement, "color", "orange");
+      break;
+      
+      case "listo para servir": 
+      this.renderer.setElementStyle( this.element.nativeElement, "color", "greenyellow");
+      break;
+      
+      
     }
 
   }

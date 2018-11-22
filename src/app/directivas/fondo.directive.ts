@@ -7,16 +7,22 @@ import { AuthService } from '../services/auth/auth.service';
 export class FondoDirective {
 
   perfil:string;
-  constructor(private auth: AuthService, private element : ElementRef, private renderer : Renderer) {
+  
+  
+  constructor(private auth: AuthService, private element : ElementRef, private renderer : Renderer) 
+  
+  {
     this.perfil= auth.GetPayLoad().perfil;
+
+
     switch(this.perfil)
     {
-      case "admin": this.renderer.setElementStyle( this.element.nativeElement, 'background-image', "url('../../../assets/imagenes/bar-1869656_1280.jpg')");
+      case "admin": this.renderer.setElementStyle( this.element.nativeElement, 'background-image', "url('../../../assets/imagenes/bar-principal.jpg')");
      
       this.renderer.setElementStyle( this.element.nativeElement, 'background-position', "center center");
       this.renderer.setElementStyle( this.element.nativeElement, 'background-size', "cover");
       break;
-      case "barra": this.renderer.setElementStyle( this.element.nativeElement, 'background-image', "url('../../../assets/imagenes/fondoBarra.jpg')");
+      case "barra": this.renderer.setElementStyle( this.element.nativeElement, 'background-image', "url('../../../assets/imagenes/bar-principal.jpg')");
      
       this.renderer.setElementStyle( this.element.nativeElement, 'background-position', "center center");
       this.renderer.setElementStyle( this.element.nativeElement, 'background-size', "cover");

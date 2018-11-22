@@ -132,7 +132,6 @@ export function tokenGetter() {
     FondoDirective,
     ColorTimerDirective,
     EstadoPedidoDirective,
-    FondoDirective,
     TipoProductoDirective,
     BotonAgregarComponent,
     BotonBorrarComponent,
