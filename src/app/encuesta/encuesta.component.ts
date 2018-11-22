@@ -54,7 +54,7 @@ export class EncuestaComponent implements OnInit {
             ) 
     {
     this.createForm();
-    config.max = 5;
+    config.max = 10;
     config.readonly = false;
    }
 
