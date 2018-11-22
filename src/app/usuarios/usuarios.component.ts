@@ -1,22 +1,35 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Usuario } from '../clases/usuario';
 import { UsuariosService } from "../services/usuarios.service";
 import { FormBuilder, FormControl, Validators, FormGroup } from '@angular/forms';
 import { MessageService } from 'primeng/api';
 import {Message} from 'primeng/components/common/api';
 
-
+export interface DetalleUsuarios {
+  usuario: string;
+  perfil: string;
+  estado: string;
+  accionesSusp: any;
+  accionesDel: any;
+}
 
 @Component({
   selector: 'app-usuarios',
   templateUrl: './usuarios.component.html',
   styleUrls: ['./usuarios.component.css']
 })
+
 export class UsuariosComponent implements OnInit {
 
+  @Input() dataSource;
 captcha=false;
-  listaUsuarios:Array<Usuario>;
+  listaUsuarios:Array<any>;
   msgs: Message[] = [];
+
+
+  displayedColumns: string[] = ['usuario', 'perfil', 'estado','accionesSusp','accionesDel'];
+
+
 
   constructor(private msjServ: MessageService, private builder: FormBuilder, private usrService: UsuariosService, private httpUsuarios:UsuariosService) {
     this.TraerTodosLosUsuarios();
@@ -36,9 +49,7 @@ captcha=false;
   ]);
   
 
-  sexo = new FormControl('', [
-    Validators.required
-  ]);
+  sexo = new FormControl('');
 
   registroForm: FormGroup = this.builder.group({
     email: this.email,
@@ -104,6 +115,7 @@ captcha=false;
 
 
   ngOnInit() {
+    this.TraerTodosLosUsuarios();
   }
 
 }
