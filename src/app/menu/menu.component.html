@@ -6,25 +6,26 @@
 
   <div fxFlex>
 
-  </div>
-
-  <div fxFlex>
-
     <div class="container">
     
       <div class="row">
       <div class="tabla-prod col-sm-4" style="padding: 5%">
         <form class="form-group" action="">
           <br>
-          <label for="numeroMesa">Numero de mesa</label>
+          <label for="numeroMesa" style="color:whitesmoke; 	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Numero de mesa</label>
           <input class="form-control miInput" id="numeroMesa" placeholder="mesa" type="text" name="mesa" value="0002" [(ngModel)]="mesa">
           <br>
-          <label for="fotoMesa">Foto mesa</label>
+          <label for="fotoMesa" style="color:whitesmoke; 	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Foto mesa</label>
           <br>
           <p-fileUpload  id="fotoMesa" mode="advanced" name="mesa" url="http://localhost/backendVFINAL/Mesas/FotoMesa"></p-fileUpload>
         </form>
         <input type="text" placeholder="Busqueda" class="form-control miInput" [(ngModel)]="busqueda" >
         <br>
+
+
+
+        <div class="mat-elevation-z8 col-md-5" style="color:black; background: rgba(119, 136, 153, 0.481);">
+    
         <table class="table">
             <thead>
               <th>Producto</th> <th>Precio</th> <th>Accion</th>
@@ -32,18 +33,21 @@
             <tbody *ngIf="listaProductos">
               <tr *ngFor="let producto of (listaProductos | filtro: busqueda)">
                   <td estilo [tipo]="producto.responsable">{{producto.nombre}}</td>
-                  <td>{{producto.precio | currency: '$ ': true: '1.1-2'}}</td>
+                  <td >{{producto.precio | currency: '$ ' : 'symbol' : '1.0'}}</td>
                   <td><app-boton-agregar [producto]="producto" (enviar)="AgregarAlPedido($event)"></app-boton-agregar></td>
               </tr>
             </tbody>
           </table>
         </div>
+
+      </div>
       
-        <div class="tabla-prod col-sm-4" style="padding: 5%">
-            <h2>Pedido</h2>
-          <table class="table">
-            
-            <thead>
+  <div class="mat-elevation-z8 col-sm-4" style="color:black; background: rgba(119, 136, 153, 0.481);">
+      
+        <h3 style="color:whitesmoke; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">PEDIDO</h3>
+
+          <table class="table" >            
+            <thead *ngIf="productosPedido">
               <th>Producto</th> <th>Precio</th> <th>Accion</th>
             </thead>
             <tbody *ngIf="productosPedido">
@@ -58,24 +62,30 @@
               <td>Total</td> <td>{{totalPedido | currency: '$ ': true: '1.1-2'}} </td>
             </tfoot>
           </table>
+
+
+
         </div>
         
         <div class="btn-ingresar col-sm-4 ">
         <button class="btn btn-primary col-sm-12" (click)="IngresarPedido()">Ingresar pedido</button>
-        <div class="card-pedido card col-sm-12" style="padding: 5%"> 
-      
-          <legend>Numero pedido:</legend>
-          <h3 *ngIf="elPedido.id"> {{elPedido.id}} </h3>
-          <legend>Detalle:</legend>
-          <ul *ngFor="let p of elPedido.detalle">
-            <li>{{p.nombre}}</li>
-          </ul>
-          <legend>Total:</legend>
-          <h4 *ngIf="elPedido.id"> {{totalPedido | currency: '$ ': true: '1.1-2'}} </h4>
-          <div><app-csv *ngIf="elPedido.id" [pedido]="elPedido"></app-csv></div>
 
+        <div class="mat-elevation-z8 col-md-5" style="color:black; background: rgba(119, 136, 153, 0.481);">
+    
+            <div class="card-pedido card col-sm-12" style="padding: 5%"> 
+          
+              <legend style="color:whitesmoke; 	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Numero pedido:</legend>
+              <h3 *ngIf="elPedido.id"> {{elPedido.id}} </h3>
+              <legend style="color:whitesmoke; 	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Detalle:</legend>
+              <ul *ngFor="let p of elPedido.detalle">
+                <li>{{p.nombre}}</li>
+              </ul>
+              <legend style="color:whitesmoke; 	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Total:</legend>
+              <h4 *ngIf="elPedido.id" style="color:whitesmoke; 	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;"> {{totalPedido | currency: '$ ': true: '1.1-2'}} </h4>
+              <div><app-csv *ngIf="elPedido.id" [pedido]="elPedido"></app-csv></div>
+
+            </div>
         </div>
-
       </div>
       </div>
       </div>

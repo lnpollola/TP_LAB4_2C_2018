@@ -6,6 +6,12 @@ import { filter } from 'rxjs/operators';
 import { PedidoService } from '../services/pedido.service';
 import { Pedido } from '../clases/pedido';
 
+export interface DetalleProductos {
+  nombProducto: string;
+  precio: string;
+  accionesSusp: any;
+}
+
 
 @Component({
   selector: 'app-menu',
@@ -15,6 +21,7 @@ import { Pedido } from '../clases/pedido';
 
 export class MenuComponent implements OnInit {
 
+  displayedColumns: string[] = ['nombProducto', 'precio', 'accionesSusp'];
 
   listaProductos:Array<Producto>;
   productosPedido:Array<Producto>;
