@@ -13,7 +13,7 @@ export class EstadoPedidoDirective {
     {
       
       case "pendiente": 
-      this.renderer.setElementStyle( this.element.nativeElement, "color", "maroon");
+      this.renderer.setElementStyle( this.element.nativeElement, "color", "orangered");
       break;
       
       case "en preparacion": 
