@@ -13,12 +13,12 @@ Aplicación de restaurante, con ABM de empleados, pedidos y sistema de comanda p
 
 ## Perfiles de la aplicación
 
--Socio
--Cliente
--Mozo
--Chopera
--Tragos&Vinos
--CandyBar
+- Socio
+- Cliente
+- Mozo
+- Chopera
+- Tragos&Vinos
+- CandyBar
 
 ## Ejecución
 Correr `ng serve` para levantar Angular, navegar hacia `http://localhost:4200/`.
