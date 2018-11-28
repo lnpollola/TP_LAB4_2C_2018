@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
 <div class="form-ingreso">
-        <h3 style="color:whitesmoke; 	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;" >Ingrese Nro de pedido </h3>
+        <h3 letraYcolor >Ingrese Nro de pedido </h3>
   <div class="form-goup">
   <input type="text" class="form-control" [(ngModel)]="idPedido" placeholder="Pedido" > <br>
   <button class="btn btn-primary" (click)="TraerTiempo()" >Traer</button>
@@ -15,7 +15,7 @@
 
 <div class="row">
   <!-- <div class="info-cliente col-sm-8"> -->
-    <h1 *ngIf="idPedido" style="color:whitesmoke; 	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+    <h1 *ngIf="idPedido" letraYcolor>
       Pedido seleccionado: {{idPedido}}
     </h1>
     

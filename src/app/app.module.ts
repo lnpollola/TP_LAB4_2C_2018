@@ -110,6 +110,7 @@ import { CaptchaPropioComponent } from './captcha-propio/captcha-propio.componen
 import { CambioDolarPipe } from './pipes/cambio-dolar.pipe';
 import { AgregoTextoPosPipe } from './pipes/agrego-texto-pos.pipe';
 import { EliminoMailPipe } from './pipes/elimino-mail.pipe';
+import { LetraYcolorDirective } from './directive/letra-ycolor.directive';
  
 
 export function tokenGetter() {
@@ -151,7 +152,8 @@ export function tokenGetter() {
     CaptchaPropioComponent,
     CambioDolarPipe,
     AgregoTextoPosPipe,
-    EliminoMailPipe
+    EliminoMailPipe,
+    LetraYcolorDirective
   ],
   imports: [
     BrowserModule,

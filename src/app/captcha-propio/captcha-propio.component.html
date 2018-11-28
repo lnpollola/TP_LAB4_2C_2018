@@ -1,5 +1,5 @@
 <div class="captcha">
-  <p style="color:whitesmoke; 	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Ingrese el LOGO - {{colorPedido}}</p>
+  <p letraYcolor>Ingrese el LOGO - {{colorPedido}}</p>
   <div *ngIf="spinner" class="spinner">
       <img src="./assets/imagenes/spinner.gif" style="height: 150px; width: 150px" alt="">
     </div> 
@@ -10,6 +10,6 @@
     <div class="azul col-sm-2" (click)= "Ingresar('BOMBA')"></div>
   </div>
 
-  <legend *ngIf="respuesta" style="color:whitesmoke; 	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">No soy un robot</legend>
+  <legend *ngIf="respuesta" letraYcolor>No soy un robot</legend>
 
 </div>

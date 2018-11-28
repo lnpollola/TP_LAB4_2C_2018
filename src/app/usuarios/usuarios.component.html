@@ -3,7 +3,7 @@
 
 <div class="row">
     <div class="form-ingreso col-sm-3">
-        <h3 style="color:whitesmoke; 	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Nuevo empleado</h3>
+        <h3 letraYcolor>Nuevo empleado</h3>
       <form [formGroup]="registroForm" >
         <div class="form-group">
           <input class="form-control input-ingreso" placeholder="Email" type="email" id="email"  name="email" [formControl]="email" required
@@ -26,7 +26,7 @@
           </mat-form-field>
 
 
-            <legend style="color:whitesmoke; 	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Sexo</legend>
+            <legend letraYcolor>Sexo</legend>
 
             <mat-radio-group  [formControl]="sexo">
                 <mat-radio-button value="Hombre"  type="radio" id="sexoh"  name="sexo"   style="color:whitesmoke; 	font-family: Impact, Haettenschweiler, 'Arial Narrow', sans-serif;" required >HOMBRE</mat-radio-button>
@@ -36,7 +36,7 @@
             <button (click)="IngresarUsuario()" class="btn btn-success col-sm-12" [disabled]="!registroForm.valid">Ingresar</button>
           <br><br>
           
-          <legend style="color:whitesmoke; 	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Verificar Captcha</legend>
+          <legend letraYcolor>Verificar Captcha</legend>
           <app-captcha-propio (lanzador)="RecibirCaptcha($event)"></app-captcha-propio> 
           <p-messages [(value)]="msgs" ></p-messages>
          </div>
