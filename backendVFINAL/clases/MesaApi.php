@@ -32,6 +32,14 @@ public function TraerTodos($request, $response, $args) {
  
 }
 
+public function TraerDisponibles($request, $response, $args) {
+    $todasLasMesas=Mesa::TraerTodasLasMesasDisponibles();
+   $newresponse = $response->withJson($todasLasMesas,200);  
+  
+  return $newresponse;
+ 
+}
+
 public static function IngresarFotoMesa($request, $response, $args)
 {
 

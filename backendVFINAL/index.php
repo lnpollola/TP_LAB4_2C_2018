@@ -79,6 +79,7 @@ $app->group('/Captcha', function(){
 });
 
 $app->group('/Mesas', function(){
+  $this->get('/TraerDisponibles',\MesaApi::class . ':TraerDisponibles');
   $this->get('/TraerTodas',\MesaApi::class . ':TraerTodos');
   $this->post('/ServirMesa',\MesaApi::class . ':ServirMesa'); 
   $this->post('/Cobrar',\MesaApi::class . ':CobrarMesa'); 

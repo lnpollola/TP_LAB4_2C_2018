@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Producto } from '../clases/producto';
 import { ProductosService } from '../services/productos.service';
 import { FormBuilder, FormControl } from '@angular/forms';
@@ -26,10 +26,11 @@ export class MenuComponent implements OnInit {
   listaProductos:Array<Producto>;
   productosPedido:Array<Producto>;
   totalPedido:number=0;
-  mesa:number;
+  @Input() mesaSeleccionada:number;
   elPedido:Pedido;
   busqueda:string;
   respuestaAsync: any;
+  @Input() mesasDisponibles:any;
 
 
   // constructor(private dishServices:DishService) { }
@@ -40,6 +41,7 @@ export class MenuComponent implements OnInit {
 
     this.elPedido=new Pedido();
     this.TraerProductos();
+    this.TraerMesasDisp();
     
   }
 
@@ -49,6 +51,18 @@ export class MenuComponent implements OnInit {
   {
     this.httpProd.TraerProductos().subscribe(data=>{
       this.listaProductos= JSON.parse(data._body);
+    //  console.log(this.listaProductos);
+      
+   });
+  }
+
+  TraerMesasDisp()
+  {
+    this.httpProd.TraerMesasDisponibles().subscribe(data=>{
+
+    
+      this.mesasDisponibles= JSON.parse(data._body);
+      console.log(this.mesasDisponibles);
     //  console.log(this.listaProductos);
       
    });
@@ -82,7 +96,7 @@ export class MenuComponent implements OnInit {
 IngresarPedido()
 {
   this.elPedido.detalle= this.productosPedido;
-  this.elPedido.idMesa=this.mesa;
+  this.elPedido.idMesa=this.mesaSeleccionada;
   
 
   this.httpPedido.IngresarPedido(this.elPedido)
@@ -99,7 +113,9 @@ IngresarPedido()
 async IngresarPedidoPromise()
 {
   this.elPedido.detalle= this.productosPedido;
-  this.elPedido.idMesa=this.mesa;
+
+  console.log(this.mesaSeleccionada);
+  this.elPedido.idMesa=this.mesaSeleccionada;
   
 
  await this.httpPedido.IngresarPedido(this.elPedido)

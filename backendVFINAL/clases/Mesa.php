@@ -69,6 +69,16 @@ class Mesa
         return $consulta->fetchAll(PDO::FETCH_CLASS, "Mesa");
     }
 
+    public static function TraerTodasLasMesasDisponibles()
+    {
+        $objetoAccesoDato = AccesoDatos::dameunObjetoAcceso();
+        $consulta = $objetoAccesoDato->RetornarConsulta("SELECT * from mesas WHERE estado='Cerrada'");
+        $consulta->execute();
+        return $consulta->fetchAll(PDO::FETCH_CLASS, "Mesa");
+    }
+
+    
+
         public static function TraerMesaVacia($tipo)
     {
 

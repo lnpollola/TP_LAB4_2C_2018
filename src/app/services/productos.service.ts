@@ -14,6 +14,12 @@ export class ProductosService {
     .pipe(data=>{return data});
     
   }
+
+  TraerMesasDisponibles():Observable<any>{
+    return this.http.httpGet("Mesas/TraerDisponibles")
+    .pipe(data=>{return data});
+    
+  }
 }
 
 
