@@ -17,7 +17,7 @@ export class BotonBorrarComponent implements OnInit {
 
   Borrar()
   {
-    console.log("se Borro: " + this.objeto.nombre);
+    // console.log("se Borro: " + this.objeto.nombre);
     this.enviarABorrar.emit(this.objeto);
     
   }

@@ -11,8 +11,21 @@
     
           <input class="form-control input-ingreso" placeholder="Clave" type="password"  name="clave"  [formControl]="clave" required><br>
     
-          <input type="text" class="form-control input-ingreso" placeholder="Perfil"  name="perfil"  [formControl]="perfil" required><br>
+          <!-- <input type="text" class="form-control input-ingreso" placeholder="Perfil"  name="perfil"  [formControl]="perfil" required><br> -->
     
+          
+          <mat-form-field>
+            <mat-select  [formControl]="perfil" placeholder="Seleccione Perfil">
+              <mat-option name="perfil"  value="admin"> ADMINISTRADOR</mat-option>
+              <mat-option name="perfil"  value="mozo"> MOZO </mat-option>
+              <mat-option name="perfil"  value="cocina"> COCINA</mat-option>
+              <mat-option name="perfil"  value="chopera"> CHOPERA</mat-option>
+              <mat-option name="perfil"  value="barra"> BARRA </mat-option>
+              <mat-option name="perfil"  value="candy"> CANDY BAR</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+
             <legend style="color:whitesmoke; 	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Sexo</legend>
 
             <mat-radio-group  [formControl]="sexo">
