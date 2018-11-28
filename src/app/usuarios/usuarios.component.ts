@@ -100,15 +100,9 @@ captcha=false;
        }
 
        
-
-       
    }
-
-   
-
    RecibirCaptcha(ok)
    {
-    // console.log("recibido", ok);
     this.captcha=ok;
    }
 

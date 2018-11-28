@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter} from '@angular/core';
+import { Component, OnInit,Input, Output, EventEmitter} from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Validators, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import {Subscription} from "rxjs";
@@ -25,6 +25,8 @@ export class LoginComponent implements OnInit {
     datacallback: string;
     public dataRespuesta:any;
     respuesta: any;
+    hide: any;
+    @Input () type: any;
 
     constructor(
         private formBuilder: FormBuilder,

@@ -55,19 +55,15 @@ export class CaptchaPropioComponent implements OnInit {
     this.Spinner();
     color == this.colorPedido ? this.ok=true : this.ok=false;
 
-    // console.log(this.ok);
 
     this.httpCaptcha.EnviarCaptcha(this.ok)
     .subscribe((data)=>{
       this.spinner=false;
 
-    //  this.respuesta= JSON.parse(data._body).respuesta;
     this.respuesta= JSON.parse(data._body).respuesta ;
-    //  this.respuesta = this.respuesta[0];
 
      this.lanzador.emit(this.respuesta);
 
-     console.log(this.respuesta);
    });
 
    
