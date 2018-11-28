@@ -29,6 +29,7 @@ export class MenuComponent implements OnInit {
   mesa:number;
   elPedido:Pedido;
   busqueda:string;
+  respuestaAsync: any;
 
 
   // constructor(private dishServices:DishService) { }
@@ -48,7 +49,7 @@ export class MenuComponent implements OnInit {
   {
     this.httpProd.TraerProductos().subscribe(data=>{
       this.listaProductos= JSON.parse(data._body);
-      console.log(this.listaProductos);
+    //  console.log(this.listaProductos);
       
    });
   }
@@ -58,7 +59,7 @@ export class MenuComponent implements OnInit {
     this.productosPedido ? this.productosPedido.push(producto) : this.productosPedido= new Array<Producto>(producto);
     
    this.totalPedido = this.totalPedido + producto.precio;
-   console.log(this.totalPedido);
+  // console.log(this.totalPedido);
     
   }
 
@@ -70,7 +71,7 @@ export class MenuComponent implements OnInit {
       if(this.productosPedido[i].nombre == producto.nombre)
       {
         this.totalPedido-= producto.precio;
-        console.log("se va a borrar el producto " + this.productosPedido[i].nombre);
+      //  console.log("se va a borrar el producto " + this.productosPedido[i].nombre);
         this.productosPedido.splice(i,1);
         break;
       }
@@ -90,8 +91,27 @@ IngresarPedido()
     (data)=>{
    let res=JSON.parse(data._body);
     this.elPedido.id= res.idPedido;
-    console.log(this.elPedido);
+   // console.log(this.elPedido);
   })
+
+}
+
+async IngresarPedidoPromise()
+{
+  this.elPedido.detalle= this.productosPedido;
+  this.elPedido.idMesa=this.mesa;
+  
+
+ await this.httpPedido.IngresarPedido(this.elPedido)
+  .toPromise().then(
+      
+    (data)=>{
+   this.respuestaAsync =JSON.parse(data._body);
+    // this.elPedido.id= res.idPedido;
+   // console.log(this.elPedido);
+  })
+
+  this.elPedido.id= this.respuestaAsync.idPedido;
 
 }
 

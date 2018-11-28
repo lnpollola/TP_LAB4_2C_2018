@@ -27,7 +27,7 @@ export class CaptchaPropioComponent implements OnInit {
   Spinner()
   {
   this.spinner= !this.spinner;
-  console.log(this.spinner);
+  // console.log(this.spinner);
   }
 
   AsignarColor()
@@ -35,6 +35,7 @@ export class CaptchaPropioComponent implements OnInit {
 
     let numero = Math.round((Math.random() * 3));
     console.log(numero);
+
     if(numero == 1 )
     {
       this.colorPedido="PUERTAROJA";
@@ -52,18 +53,24 @@ export class CaptchaPropioComponent implements OnInit {
   Ingresar(color)
   { 
     this.Spinner();
-    color == this.colorPedido ? this.ok=true : this.ok==false;
+    color == this.colorPedido ? this.ok=true : this.ok=false;
+
+    // console.log(this.ok);
 
     this.httpCaptcha.EnviarCaptcha(this.ok)
     .subscribe((data)=>{
       this.spinner=false;
 
-     this.respuesta= JSON.parse(data._body);
+    //  this.respuesta= JSON.parse(data._body).respuesta;
+    this.respuesta= JSON.parse(data._body).respuesta ;
+    //  this.respuesta = this.respuesta[0];
+
      this.lanzador.emit(this.respuesta);
+
      console.log(this.respuesta);
-     
-    
-   })
+   });
+
+   
 
    
 

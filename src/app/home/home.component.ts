@@ -36,7 +36,7 @@ export class HomeComponent implements OnInit {
 
     if(localStorage.getItem('usuario') == null )
     {
-      console.log("no hay usuario");
+      // console.log("no hay usuario");
     }
     else 
     {

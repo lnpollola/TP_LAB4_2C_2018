@@ -36,7 +36,7 @@ export class MesasComponent implements OnInit {
   {
     this.httpMesa.TraerMesas().subscribe(data=>{
       this.listaMesas= JSON.parse(data._body);
-      console.log(this.listaMesas);
+      //console.log(this.listaMesas);
   })
   }
 
@@ -44,7 +44,7 @@ export class MesasComponent implements OnInit {
   {
     this.httpMesa.ServirMesa(idMesa)
     .subscribe((data)=>{
-      console.log(data);
+    //  console.log(data);
       this.TraerLasMesas();
     })
     ;
@@ -54,7 +54,7 @@ export class MesasComponent implements OnInit {
   {
     this.httpMesa.CobrarMesa(idMesa)
     .subscribe((data)=>{
-      console.log(data);
+     // console.log(data);
       this.importe= JSON.parse(data._body).total;
       this.display=true;
       this.TraerLasMesas();
@@ -65,7 +65,7 @@ export class MesasComponent implements OnInit {
   {
     this.httpMesa.CerrarMesa(idMesa)
     .subscribe((data)=>{
-      console.log(data);
+      //console.log(data);
 
       this.TraerLasMesas();
     });

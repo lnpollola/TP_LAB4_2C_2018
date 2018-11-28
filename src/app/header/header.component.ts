@@ -25,7 +25,7 @@ export class HeaderComponent implements OnInit {
     // console.log(localStorage.getItem('usuario'));
     if(localStorage.getItem('usuario') == null )
     {
-      console.log("no hay usuario");
+    //  console.log("no hay usuario");
       this.IngresoBool=false;
       this.nombre='';
     }

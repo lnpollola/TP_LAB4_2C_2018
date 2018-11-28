@@ -4,6 +4,9 @@ class CaptchaApi
 {
     public function RecibirCaptcha($request, $response, $args) {
         $ArrayDeParametros = $request->getParsedBody();
+
+
+
         $consulta=$ArrayDeParametros['consulta'];
         $objDelaRespuesta= new stdclass();
  

@@ -23,7 +23,7 @@ export class BotonAgregarComponent implements OnInit {
 
   Agregar()
   {
-    console.log("se agrega el producto: " + this.producto.nombre);
+    //console.log("se agrega el producto: " + this.producto.nombre);
     this.enviar.emit(this.producto);
     
   }

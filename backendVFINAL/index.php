@@ -54,6 +54,8 @@ $app->group('/Usuarios', function () {
 })/*->add(\MWparaAutentificar::class . ':VerificarUsuario')*/->add(\MWparaCORS::class . ':HabilitarCORS8080')->add(\MWparaCORS::class . ':HabilitarCORSTodos');
 
 
+
+
 $app->group('/Pedidos', function(){
   $this->post('/',\PedidoApi::class . ':IngresarPedido'); 
   $this->post('/PendientesEmpleado',\PedidoApi::class . ':TraerPendientesEmpleado');

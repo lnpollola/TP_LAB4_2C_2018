@@ -10,7 +10,7 @@ export class ColorTimerDirective {
 
 
   ngOnInit(){
-    console.log(this.tiempo);
+    //console.log(this.tiempo);
 
     if(this.tiempo=="00:59"){
     this.renderer.setElementStyle( this.element.nativeElement, "color", "red");

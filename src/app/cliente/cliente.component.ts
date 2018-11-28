@@ -34,7 +34,7 @@ displayedColumns: string[] = ['nroPedido', 'producto', 'tiempoRestante'];
       let respuesta= JSON.parse(data._body);
       this.detalles=respuesta.detalles;
       this.idPedido=respuesta.idPedido;
-      console.log(this.detalles);
+     // console.log(this.detalles);
 
     })
   }

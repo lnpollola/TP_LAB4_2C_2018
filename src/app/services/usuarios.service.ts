@@ -113,7 +113,7 @@ public CargarUsuario(usuario, clave, sexo, perfil?)
       "token": localStorage.getItem('token')
     }
   }
-  console.log(datos);
+//  console.log(datos);
 
 
   return this.miHttp.httpPost("Usuarios/Carga",datos)

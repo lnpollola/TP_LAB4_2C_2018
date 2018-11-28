@@ -54,12 +54,12 @@
               <tr *ngFor="let producto of productosPedido">
                 
                   <td>{{producto.nombre}}</td>
-                  <td>{{producto.precio | currency: '$ ': true: '1.1-2'}}</td>
+                  <td>{{producto.precio | currency: '$ ': "symbol": '1.1-2'}}</td>
                   <td> <app-boton-borrar [objeto]="producto" (enviarABorrar)="QuitarAlPedido($event)" ></app-boton-borrar> </td>
               </tr>
             </tbody>
             <tfoot>
-              <td>Total</td> <td>{{totalPedido | currency: '$ ': true: '1.1-2'}} </td>
+              <td>Total</td> <td>{{totalPedido | currency: '$ ': "symbol": '1.1-2'}} </td>
             </tfoot>
           </table>
 
@@ -68,20 +68,23 @@
         </div>
         
         <div class="btn-ingresar col-sm-4 ">
-        <button class="btn btn-primary col-sm-12" (click)="IngresarPedido()">Ingresar pedido</button>
+          
+          <button class="btn btn-primary col-sm-12" (click)="IngresarPedido()">Ingresar pedido</button>
+          <button class="btn btn-primary col-sm-12" (click)="IngresarPedidoPromise()">Ingresar pedido Promise</button>
+
 
         <div class="mat-elevation-z8 col-md-5" style="color:black; background: rgba(119, 136, 153, 0.481);">
     
             <div class="card-pedido card col-sm-12" style="padding: 5%"> 
           
               <legend style="color:whitesmoke; 	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Numero pedido:</legend>
-              <h3 *ngIf="elPedido.id"> {{elPedido.id}} </h3>
+              <h3 *ngIf="elPedido.id"> {{elPedido.id }} </h3>
               <legend style="color:whitesmoke; 	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Detalle:</legend>
               <ul *ngFor="let p of elPedido.detalle">
                 <li>{{p.nombre}}</li>
               </ul>
               <legend style="color:whitesmoke; 	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Total:</legend>
-              <h4 *ngIf="elPedido.id" style="color:whitesmoke; 	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;"> {{totalPedido | currency: '$ ': true: '1.1-2'}} </h4>
+              <h4 *ngIf="elPedido.id" style="color:whitesmoke; 	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;"> {{totalPedido | currency: '$ ': "symbol": '1.1-2'}} </h4>
               <div><app-csv *ngIf="elPedido.id" [pedido]="elPedido"></app-csv></div>
 
             </div>

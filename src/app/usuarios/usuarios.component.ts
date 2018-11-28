@@ -65,7 +65,7 @@ captcha=false;
 
    this.httpUsuarios.TraerUsuarios().subscribe(data=>{
     this.listaUsuarios= JSON.parse(data._body);
-    console.log(this.listaUsuarios);
+   // console.log(this.listaUsuarios);
     
  });
    }
@@ -85,7 +85,7 @@ captcha=false;
       
         this.httpUsuarios.CargarUsuario(usuario, clave, sexo, perfil)
         .subscribe((data)=>{
-          console.log(data);
+         // console.log(data);
           this.TraerTodosLosUsuarios();
         })
         ;
@@ -108,7 +108,7 @@ captcha=false;
 
    RecibirCaptcha(ok)
    {
-     console.log("recibido", ok);
+    // console.log("recibido", ok);
     this.captcha=ok;
    }
 

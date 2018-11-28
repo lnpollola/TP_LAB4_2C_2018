@@ -54,7 +54,7 @@ export class CsvComponent implements OnInit {
 
   ngOnInit() {
     this.Asignar();
-    console.log(this.data);
+    //console.log(this.data);
 
   }
 
