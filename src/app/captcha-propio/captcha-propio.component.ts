@@ -2,6 +2,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { CaptchaService } from '../services/captcha.service';
 import { timeout } from 'q';
+import { delay } from 'rxjs/operators';
 
 
 @Component({
@@ -57,7 +58,7 @@ export class CaptchaPropioComponent implements OnInit {
 
 
     this.httpCaptcha.EnviarCaptcha(this.ok)
-    .subscribe((data)=>{
+    .pipe(delay(2000)).subscribe((data)=>{
       this.spinner=false;
 
     this.respuesta= JSON.parse(data._body).respuesta ;
@@ -67,9 +68,6 @@ export class CaptchaPropioComponent implements OnInit {
    });
 
    
-
-   
-
   }
   ngOnInit() {
   }
