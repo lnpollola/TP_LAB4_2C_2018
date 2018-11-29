@@ -103,6 +103,9 @@ export class EstadisticasComponent implements OnInit {
       ]
   });
 
+  localStorage.removeItem('datosUso'); 
+
+
   }
 
 
